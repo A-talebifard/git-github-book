@@ -1,0 +1,3781 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== Primary Meta Tags ===== -->
+<title>کتاب جامع Git و GitHub — آموزش کامل فارسی | A-Talebifard</title>
+<meta name="title" content="کتاب جامع Git و GitHub — آموزش کامل فارسی | A-Talebifard">
+<meta name="description" content="کتاب آنلاین رایگان فارسی Git و GitHub با ۲۲ فصل جامع، ۱۰۰+ دستور، ۱۵+ نمودار و Cheat Sheet کامل. از مبانی تا موضوعات پیشرفته: Branching، Rebase، Pull Request، GitHub Actions و Pages. مناسب مبتدی تا پیشرفته.">
+<meta name="keywords" content="git, github, آموزش git, آموزش github, git فارسی, کنترل نسخه, branch, merge, rebase, pull request, github actions, github pages, git cheat sheet, آموزش برنامه نویسی, توسعه دهنده, برنامه نویسی فارسی, version control, git tutorial, github tutorial, git persian, A-Talebifard, عباس طالبی فرد">
+<meta name="author" content="A-Talebifard">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="Persian">
+<meta name="revisit-after" content="7 days">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="generator" content="A-Talebifard">
+<link rel="canonical" href="https://a-talebifard.github.io/git-github-book">
+
+<!-- ===== Open Graph / Facebook ===== -->
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://a-talebifard.github.io/git-github-book/">
+<meta property="og:title" content="کتاب جامع Git و GitHub — آموزش کامل فارسی">
+<meta property="og:description" content="کتاب آنلاین رایگان فارسی Git و GitHub با ۲۲ فصل جامع، ۱۰۰+ دستور، ۱۵+ نمودار و Cheat Sheet کامل. از مبانی تا موضوعات پیشرفته.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/79259668?v=4">
+<meta property="og:image:alt" content="کتاب جامع Git و GitHub — A-Talebifard">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="400">
+<meta property="og:site_name" content="کتاب جامع Git و GitHub">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="book:author" content="https://github.com/A-talebifard">
+<meta property="book:tag" content="git">
+<meta property="book:tag" content="github">
+<meta property="book:tag" content="programming">
+<meta property="book:tag" content="persian">
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://a-talebifard.github.io/git-github-book/">
+<meta name="twitter:title" content="کتاب جامع Git و GitHub — آموزش کامل فارسی">
+<meta name="twitter:description" content="کتاب آنلاین رایگان فارسی Git و GitHub با ۲۲ فصل جامع، ۱۰۰+ دستور، ۱۵+ نمودار و Cheat Sheet کامل.">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/79259668?v=4">
+<meta name="twitter:image:alt" content="کتاب جامع Git و GitHub — A-Talebifard">
+<meta name="twitter:creator" content="@A-talebifard">
+<meta name="twitter:site" content="@A-talebifard">
+
+<!-- ===== Article / Book Schema ===== -->
+<meta property="article:published_time" content="2025-01-01T00:00:00+03:30">
+<meta property="article:modified_time" content="2025-07-20T00:00:00+03:30">
+<meta property="article:author" content="https://github.com/A-talebifard">
+<meta property="article:section" content="Programming">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Version Control">
+
+<!-- ===== Performance / Resource Hints ===== -->
+<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+<!-- All other resources are now local -->
+
+<!-- ===== Favicon ===== -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231e1e2e'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%23c084fc' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231e1e2e'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='bold' fill='%23c084fc' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#1e1e2e">
+<meta name="msapplication-TileColor" content="#1e1e2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Git &amp; GitHub Book">
+
+<!-- ===== Local Fonts (no external requests) ===== -->
+<!-- Font @font-face declarations are in css/style.css -->
+
+<!-- ===== Local Stylesheets ===== -->
+<link rel="stylesheet" href="css/atom-one-dark.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ===== Local Mermaid.js for diagrams ===== -->
+<script src="js/mermaid.min.js"></script>
+
+<!-- ===== Local Highlight.js for code syntax ===== -->
+<script src="js/highlight.min.js"></script>
+<script src="js/highlight-bash.min.js"></script>
+<script src="js/highlight-yaml.min.js"></script>
+<script src="js/highlight-markdown.min.js"></script>
+<script src="js/highlight-powershell.min.js"></script>
+<script src="js/highlight-json.min.js"></script>
+
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Top Bar -->
+<div id="topbar">
+  <div class="brand">
+    <button id="menu-toggle" class="icon-btn" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="logo">G</div>
+    <span>کتاب جامع Git &amp; GitHub</span>
+  </div>
+  <div class="actions">
+    <input type="text" class="search-box" id="search-input" placeholder="جستجو در کتاب..." autocomplete="off">
+    <button class="icon-btn" id="search-btn" aria-label="Search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="icon-btn" id="theme-btn" aria-label="Top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Search Results Dropdown -->
+<div id="search-results"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar">
+  <div class="toc-title">فهرست کتاب</div>
+  <div class="toc-group" id="toc-container"></div>
+</aside>
+
+<!-- Main Content -->
+<main id="main">
+<div class="content">
+
+<!-- ============================ COVER ============================ -->
+<section id="cover" class="chapter">
+  <div class="cover-content">
+    <div class="badge">
+      <span>●</span> v1.0 · 1404 · Persian Edition
+    </div>
+    <h1>کتاب جامع Git و GitHub</h1>
+    <p class="subtitle">از مبانی تا موضوعات پیشرفته — یک مرجع کامل برای توسعه‌دهندگان</p>
+
+    <div class="author-card">
+      <img src="img/avatar.jpg" class="author-avatar" alt="A-Talebifard">
+      <div class="author-name">A-Talebifard</div>
+      <div class="author-role">Software Developer · Open Source Enthusiast</div>
+      <div class="social-links">
+        <a href="https://github.com/A-talebifard" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/abbastalebifard/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-down">برای شروع، پیمایش کنید ↓</div>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 1: History ============================ -->
+<section id="ch1" class="chapter">
+  <span class="chapter-label">Chapter 01</span>
+  <h2>تاریخچه Git <a class="anchor-link" href="#ch1">#</a></h2>
+
+  <p>داستان Git با هسته‌ی لینوکس شروع شد. لینوس توروالدز در سال ۲۰۰۲ تصمیم گرفت پروژه‌ی لینوکس را به BitKeeper بسپارد — یک سیستم کنترل نسخه‌ی تجاری که مالک آن، Larry McVoy، اجازه استفاده رایگان را به پروژه‌های متن‌باز داده بود. این تصمیم در ابتدا کارآمد بود، اما در سال ۲۰۰۵ پس از اینکه برخی توسعه‌دهندگان لینوکس مهندسی معکوسِ پروتکل BitKeeper را انجام دادند، McVoy لیسانس رایگان را لغو کرد. این اتفاق، جامعه‌ی لینوکس را در موقعیتی سخت قرار داد.</p>
+
+  <p>لینوس توروالدس در آوریل ۲۰۰۵ شروع به نوشتن سیستمی جدید کرد. هدف او سه چیز بود: سرعت بالا، طراحی توزیع‌شده، و پشتیبانی قوی از شاخه‌ها (branches). پس از تنها ده روز، نسخه اولیه آماده شد. در ژوئیه ۲۰۰۵، مدیریت پروژه به Junio Hamano واگذار شد که تا امروز maintainer اصلی Git است. نام «Git» در زبان بریتانیایی عامیانه به معنی «آدم خنگ» است — انتخابی طنزآمیز از سوی توروالدز.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+timeline
+    title Evolution of Git
+    section 2002 - BitKeeper Era
+        Linux kernel uses BitKeeper
+        : Free license for OSS
+    section 2005 - Birth of Git
+        Apr 2005 : License revoked
+        Apr 2005 : Linus starts Git
+        Jul 2005 : Junio Hamano takes over
+    section 2007-2010 - Adoption
+        2007 : GitHub founded
+        2008 : GitHub goes public
+        2010 : Major OSS migration
+    section 2018+ - Dominance
+        2018 : Microsoft acquires GitHub
+        2020 : 100M+ developers
+        2024 : AI-powered workflows
+    </div>
+    <div class="diagram-title">// Timeline: From BitKeeper to AI-powered Git workflows</div>
+  </div>
+
+  <h3>چرا Git برنده شد؟</h3>
+  <p>Git برنده شد زیرا سه مشکل اصلی سیستم‌های قبلی را حل کرد: سرعت کار با پروژه‌های بزرگ (هسته لینوکس ده‌ها هزار فایل دارد)، توزیع‌شده بودن (هر کلون یک نسخه کامل از تاریخچه است) و شاخه‌های ارزان (ساختن شاخه در Git تقریباً هیچ هزینه‌ای ندارد). این ویژگی‌ها به همراه ظهور GitHub در سال ۲۰۰۸، Git را به استاندارد جهانی کنترل نسخه تبدیل کرد.</p>
+
+  <div class="callout info">
+    <div class="title">ℹ️ اطلاعات کلیدی</div>
+    <p>Git طوری طراحی شده که «آرزوی واقعی‌ترین داده‌ها در تاریخچه است» — یعنی هیچ commit ای واقعاً از بین نمی‌رود تا زمانی که reflog آن را نگه دارد (پیش‌فرض: ۹۰ روز). این موضوع، امنیت بالایی به توسعه‌دهندگان می‌دهد.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 2: VCS Comparison ============================ -->
+<section id="ch2" class="chapter">
+  <span class="chapter-label">Chapter 02</span>
+  <h2>مقایسه با VCSهای دیگر <a class="anchor-link" href="#ch2">#</a></h2>
+
+  <p>سیستم‌های کنترل نسخه به دو دسته اصلی تقسیم می‌شوند: متمرکز (Centralized) و توزیع‌شده (Distributed). SVN، CVS و Perforce نمونه‌های متمرکز هستند که در آن‌ها یک سرور مرکزی همه چیز را نگه می‌دارد و کلاینت‌ها فقط نسخه‌های اخیر را دارند. در مقابل، Git، Mercurial و Bazaar توزیع‌شده‌اند: هر کلون، تاریخچه‌ی کامل پروژه را در خود دارد.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    subgraph Centralized["Centralized VCS (e.g. SVN)"]
+        S1["Central Server<br/>(Full History)"]
+        C1["Client A<br/>(Working Copy)"]
+        C2["Client B<br/>(Working Copy)"]
+        C3["Client C<br/>(Working Copy)"]
+        S1 <--> C1
+        S1 <--> C2
+        S1 <--> C3
+    end
+    </div>
+    <div class="diagram-title">// Centralized: Single point of failure, requires constant network</div>
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    subgraph Distributed["Distributed VCS (e.g. Git)"]
+        R1["Remote Server<br/>(GitHub/GitLab)"]
+        L1["Local Repo A<br/>(Full History)"]
+        L2["Local Repo B<br/>(Full History)"]
+        L3["Local Repo C<br/>(Full History)"]
+        L1 <-->|push/pull| R1
+        L2 <-->|push/pull| R1
+        L3 <-->|push/pull| R1
+        L1 <-.->|direct peer| L2
+    end
+    </div>
+    <div class="diagram-title">// Distributed: Every clone is a full backup, works offline</div>
+  </div>
+
+  <h3>جدول مقایسه</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ویژگی</th>
+          <th>Git</th>
+          <th>SVN</th>
+          <th>Mercurial</th>
+          <th>Perforce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>مدل</td><td>Distributed</td><td>Centralized</td><td>Distributed</td><td>Centralized</td></tr>
+        <tr><td>آفلاین کار می‌کند</td><td>بله</td><td>خیر</td><td>بله</td><td>خیر</td></tr>
+        <tr><td>سرعت branch</td><td>آنی</td><td>کند</td><td>آنی</td><td>کند</td></tr>
+        <tr><td>ذخیره‌سازی</td><td>Snapshot</td><td>Delta</td><td>Snapshot</td><td>Delta</td></tr>
+        <tr><td>اندازه repo</td><td>کوچک</td><td>متوسط</td><td>کوچک</td><td>متوسط</td></tr>
+        <tr><td>یادگیری</td><td>سخت</td><td>آسان</td><td>متوسط</td><td>سخت</td></tr>
+        <tr><td>بازار فعلی</td><td>~۹۰٪</td><td>کم</td><td>کم</td><td>نیچ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ نکته عملی</div>
+    <p>اگرچه Git توزیع‌شده است، اما در عمل معمولاً یک «مبدأ حقیقت» (origin remote) روی GitHub/GitLab داریم. توزیع‌شده بودن به معنای استقلال در کار آفلاین و نداشتن نقطه شکست واحد (single point of failure) است.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 3: Git Basics ============================ -->
+<section id="ch3" class="chapter">
+  <span class="chapter-label">Chapter 03</span>
+  <h2>مبانی Git <a class="anchor-link" href="#ch3">#</a></h2>
+
+  <p>برای درک Git، باید سه منطقه‌ی اصلی آن را بشناسید: Working Directory (دایرکتوری کاری)، Staging Area (Index) و Repository. هر فایل در هر لحظه یکی از این چهار وضعیت را دارد: Untracked، Modified، Staged یا Committed. درک این چرخه، پایه‌ی همه کارهای بعدی است.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+stateDiagram-v2
+    [*] --> Untracked : new file
+    Untracked --> Staged : git add
+    Staged --> Modified : edit file
+    Modified --> Staged : git add
+    Staged --> Committed : git commit
+    Committed --> Modified : edit file
+    Committed --> [*] : git rm
+    note right of Staged : Snapshot ready<br/>for commit
+    note right of Committed : Saved in<br/>local history
+    </div>
+    <div class="diagram-title">// File lifecycle: 4 states that every file cycles through</div>
+  </div>
+
+  <h3>سه منطقه اصلی</h3>
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart LR
+    WD["Working Directory<br/>(Files on disk)"] -->|git add| SA["Staging Area<br/>(Index)"]
+    SA -->|git commit| LR["Local Repository<br/>(.git folder)"]
+    LR -->|git push| RR["Remote Repository<br/>(GitHub)"]
+    RR -->|git fetch/pull| LR
+    LR -->|git checkout| WD
+    style WD fill:#f38ba8,stroke:#1e1e2e,color:#1e1e2e
+    style SA fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style LR fill:#a6e3a1,stroke:#1e1e2e,color:#1e1e2e
+    style RR fill:#89b4fa,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Three areas + remote: data flows in both directions</div>
+  </div>
+
+  <h3>وضعیت‌های فایل</h3>
+  <ul>
+    <li><strong>Untracked</strong> — فایل جدیدی که Git هنوز آن را track نمی‌کند.</li>
+    <li><strong>Modified</strong> — فایل tracked که تغییر کرده اما هنوز stage نشده.</li>
+    <li><strong>Staged</strong> — فایل تغییر کرده و برای commit بعدی آماده است.</li>
+    <li><strong>Committed</strong> — تغییرات به صورت دائمی در تاریخچه ذخیره شده.</li>
+  </ul>
+
+  <div class="callout note">
+    <div class="title">💡 نکته مفهومی</div>
+    <p>برخلاف SVN که تفاوت‌ها (delta) را ذخیره می‌کند، Git <strong>snapshot</strong> می‌گیرد. یعنی هر commit، عکس کامل از وضعیت همه فایل‌ها در آن لحظه است. برای فایل‌های تغییر نکرده، فقط یک لینک به snapshot قبلی ذخیره می‌شود. این مدل، عملیات branch و merge را بسیار سریع می‌کند.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 4: Installation ============================ -->
+<section id="ch4" class="chapter">
+  <span class="chapter-label">Chapter 04</span>
+  <h2>نصب و تنظیم اولیه <a class="anchor-link" href="#ch4">#</a></h2>
+
+  <p>نصب Git روی هر سه سیستم‌عامل اصلی ساده است. پس از نصب، مهم‌ترین قدم، تنظیم نام و ایمیل است؛ زیرا این مقادیر در هر commit ذخیره می‌شوند و تاریخچه‌ی شما را در پروژه‌های متن‌باز شناسایی می‌کنند. در این فصل، نصب روی هر سه پلتفرم، تنظیمات سراسری، و راه‌اندازی SSH برای اتصال امن به GitHub را پوشش می‌دهیم.</p>
+
+  <h3>نصب روی Windows</h3>
+  <p>ساده‌ترین روش، دانلود «Git for Windows» از سایت رسمی است که شامل Git Bash، یک شبیه‌ساز ترمینال لینوکس، و Git GUI می‌شود. هنگام نصب، گزینه «Use Git from the Windows Command Prompt» را انتخاب کنید تا دستورات Git در PowerShell و CMD هم در دسترس باشند.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">powershell</span></div>
+<pre><code class="language-powershell"># Download via winget (Windows Package Manager)
+winget install --id Git.Git -e --source winget
+
+# Verify installation
+git --version
+# Output: git version 2.45.0.windows.1
+
+# Optional: install GitHub CLI
+winget install --id GitHub.cli
+gh auth login
+</code></pre>
+  </div>
+
+  <h3>نصب روی macOS</h3>
+  <p>روی مک، ساده‌ترین روش استفاده از Homebrew است. اگر Homebrew نصب نیست، ابتدا آن را از brew.sh نصب کنید. جایگزین، نصب Xcode Command Line Tools است که Git را به همراه می‌آورد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Option A: via Homebrew (recommended)
+brew install git
+
+# Option B: via Xcode Command Line Tools
+xcode-select --install
+
+# Verify
+git --version
+# Output: git version 2.45.0
+</code></pre>
+  </div>
+
+  <h3>نصب روی Linux</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Debian / Ubuntu
+sudo apt update &amp;&amp; sudo apt install git -y
+
+# Fedora / RHEL
+sudo dnf install git -y
+
+# Arch Linux
+sudo pacman -S git
+
+# Verify
+git --version
+</code></pre>
+  </div>
+
+  <h3>تنظیمات اولیه (مهم!)</h3>
+  <p>پس از نصب، باید نام و ایمیل خود را تنظیم کنید. این اطلاعات در metadata هر commit ذخیره می‌شوند و در GitHub برای شناسایی مشارکت‌های شما استفاده می‌شوند. مطمئن شوید ایمیل، همان ایمیل اکانت GitHub شما باشد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Set global identity (used for every commit)
+git config --global user.name "Abbas Talebifard"
+git config --global user.email "abbas@example.com"
+
+# Set default branch name (modern convention)
+git config --global init.defaultBranch main
+
+# Set preferred editor
+git config --global core.editor "code --wait"        # VS Code
+# git config --global core.editor "vim"              # Vim
+# git config --global core.editor "nano"             # Nano
+
+# Enable colored output
+git config --global color.ui auto
+
+# Set default pull behavior (rebase instead of merge)
+git config --global pull.rebase true
+
+# Configure line endings (cross-platform)
+# Windows:
+git config --global core.autocrlf true
+# macOS/Linux:
+git config --global core.autocrlf input
+
+# View all settings
+git config --list
+git config --global --list
+
+# Edit global config file directly
+git config --global --edit
+</code></pre>
+  </div>
+
+  <h3>راه‌اندازی SSH برای GitHub</h3>
+  <p>SSH Keys اجازه می‌دهند بدون وارد کردن پسورد در هر push/pull، با GitHub ارتباط امن برقرار کنید. این روش ایمن‌تر از HTTPS با Personal Access Token است و برای کار روزمره توصیه می‌شود.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Generate a new SSH key (Ed25519 - modern &amp; secure)
+ssh-keygen -t ed25519 -C "abbas@example.com"
+# Press Enter to accept default path (~/.ssh/id_ed25519)
+# Set a passphrase (optional but recommended)
+
+# Step 2: Start ssh-agent in background
+eval "$(ssh-agent -s)"
+
+# Step 3: Add private key to ssh-agent
+ssh-add ~/.ssh/id_ed25519
+
+# Step 4: Copy public key to clipboard
+cat ~/.ssh/id_ed25519.pub
+# macOS: pbcopy &lt; ~/.ssh/id_ed25519.pub
+# Windows: clip &lt; ~/.ssh/id_ed25519.pub
+# Linux: xclip -sel clip &lt; ~/.ssh/id_ed25519.pub
+
+# Step 5: Add key to GitHub → Settings → SSH and GPG keys → New SSH key
+
+# Step 6: Test connection
+ssh -T git@github.com
+# Output: Hi A-talebifard! You've successfully authenticated...
+</code></pre>
+  </div>
+
+  <div class="callout warn">
+    <div class="title">⚠️ هشدار امنیتی</div>
+    <p>هرگز کلید خصوصی (<code>id_ed25519</code> بدون <code>.pub</code>) را با کسی به اشتراک نگذارید یا در repo قرار ندهید. فقط کلید عمومی (<code>.pub</code>) به GitHub اضافه می‌شود.</p>
+  </div>
+
+  <h3>ساخت اولین Repository</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Create a new directory and initialize git
+mkdir my-first-repo
+cd my-first-repo
+git init
+
+# Create a README file
+echo "# My First Repo" &gt; README.md
+
+# Check status (file is untracked)
+git status
+
+# Stage the file
+git add README.md
+
+# Commit with a message
+git commit -m "Initial commit: add README"
+
+# View commit history
+git log --oneline
+
+# Connect to GitHub (create empty repo on GitHub first)
+git remote add origin git@github.com:A-talebifard/my-first-repo.git
+git branch -M main
+git push -u origin main
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 5: Basic Commands ============================ -->
+<section id="ch5" class="chapter">
+  <span class="chapter-label">Chapter 05</span>
+  <h2>دستورات پایه Git <a class="anchor-link" href="#ch5">#</a></h2>
+
+  <p>این فصل، دستورات روزمره‌ی Git را پوشش می‌دهد؛ دستوراتی که در هر ساعت کار با Git از آن‌ها استفاده می‌کنید. درک عمیق این دستورات، پایه‌ی همه کارهای پیچیده‌تر است. هر دستور با مثال عملی و توضیح خروجی نشان داده شده است.</p>
+
+  <h3>git init — ساخت repository جدید</h3>
+  <p>این دستور یک پوشه‌ی مخفی <code>.git</code> در دایرکتوری فعلی می‌سازد که تمام تاریخچه، تنظیمات و اشیای Git در آن ذخیره می‌شوند. دو حالت دارد: ساخت repo جدید در دایرکتوری موجود، یا clone از remote.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Initialize a new git repo in current directory
+mkdir my-project &amp;&amp; cd my-project
+git init
+# Output: Initialized empty Git repository in /path/.git/
+
+# Initialize with a specific default branch
+git init -b main
+
+# Initialize a bare repo (for servers, no working dir)
+git init --bare my-project.git
+
+# Clone an existing remote repository
+git clone https://github.com/A-talebifard/my-project.git
+git clone git@github.com:A-talebifard/my-project.git   # via SSH
+
+# Clone into a specific directory
+git clone git@github.com:A-talebifard/my-project.git my-folder
+
+# Clone only the latest commit (shallow, saves bandwidth)
+git clone --depth 1 git@github.com:A-talebifard/my-project.git
+</code></pre>
+  </div>
+
+  <h3>git add — staging تغییرات</h3>
+  <p>دستور <code>add</code> تغییرات را از Working Directory به Staging Area منتقل می‌کند. این یک «دو مرحله‌ای» بودن Git است که به شما اجازه می‌دهد قبل از commit، دقیقاً انتخاب کنید چه چیزی در commit قرار گیرد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Stage a single file
+git add README.md
+
+# Stage multiple files
+git add file1.txt file2.txt file3.txt
+
+# Stage all changes in current directory (recursive)
+git add .
+git add --all          # stages deletions too
+git add -A             # same as --all
+
+# Stage all .js files
+git add "*.js"
+
+# Stage interactively (patch mode - choose hunks)
+git add -p
+# For each changed hunk, choose: y (yes), n (no), s (split), q (quit)
+
+# Stage a specific directory
+git add src/components/
+
+# Stage based on modification type
+git add -u             # only modified/deleted, not new files
+</code></pre>
+  </div>
+
+  <h3>git commit — ثبت تغییرات</h3>
+  <p>هر commit یک snapshot از وضعیت staged است. پیام commit اهمیت زیادی دارد: باید کوتاه، توصیفی و در زمان حال باشد. استاندارد Conventional Commits برای پروژه‌های حرفه‌ای توصیه می‌شود.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Basic commit with message
+git commit -m "Add user authentication"
+
+# Multi-line commit message (title + body)
+git commit -m "Add user authentication
+
+- Implement JWT-based login flow
+- Add /api/auth/login and /api/auth/register
+- Add password hashing with bcrypt
+- Add tests for auth middleware"
+
+# Stage all tracked modifications and commit in one step
+git commit -am "Update README"
+
+# Amend the last commit (add changes or fix message)
+git commit --amend -m "New message"
+git commit --amend --no-edit    # keep message, add changes
+
+# Empty commit (useful for CI triggers)
+git commit --allow-empty -m "Trigger CI"
+
+# Sign commit with GPG key
+git commit -S -m "Signed commit"
+
+# Conventional Commits format
+# &lt;type&gt;(&lt;scope&gt;): &lt;description&gt;
+git commit -m "feat(auth): add OAuth2 login support"
+git commit -m "fix(api): handle null user in /profile"
+git commit -m "docs: update installation guide"
+git commit -m "refactor: simplify token validation"
+git commit -m "test: add unit tests for user model"
+git commit -m "chore: bump dependencies"
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ Conventional Commits</div>
+    <p>پنج نوع اصلی: <code>feat</code> (قابلیت جدید)، <code>fix</code> (رفع باگ)، <code>docs</code> (مستندات)، <code>refactor</code> (بازنویسی بدون تغییر رفتار)، <code>test</code> (تست)، <code>chore</code> (کارهای نگهداری). این استاندارد، تولید CHANGELOG خودکار و semantic versioning را ممکن می‌کند.</p>
+  </div>
+
+  <h3>git status — مشاهده وضعیت</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Show working tree status
+git status
+
+# Short format (compact)
+git status -s
+# Output:
+#  M modified-file.txt       (modified, not staged)
+# M  staged-file.txt         (staged)
+# A  new-staged-file.txt     (added &amp; staged)
+# ?? untracked-file.txt      (untracked)
+
+# Show branch info
+git status -b
+
+# Show ignored files too
+git status --ignored
+</code></pre>
+  </div>
+
+  <h3>git log — تاریخچه commits</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Show commit history
+git log
+
+# One-line compact format
+git log --oneline
+# Output:
+# a1b2c3d (HEAD -&gt; main, origin/main) Add user auth
+# d4e5f6g Update README
+# 7h8i9j0 Initial commit
+
+# Graph view with branches
+git log --oneline --graph --all --decorate
+
+# Show last N commits
+git log -5
+
+# Show commits by a specific author
+git log --author="Abbas"
+
+# Show commits since a date
+git log --since="2 weeks ago"
+git log --since="2024-01-01"
+
+# Show commits for a specific file
+git log -- path/to/file.txt
+
+# Show diff for each commit
+git log -p
+
+# Show stats per commit
+git log --stat
+
+# Show commits in a date range
+git log --after="2024-01-01" --before="2024-06-01"
+
+# Search commits by message (regex)
+git log --grep="auth"
+
+# Custom format
+git log --pretty=format:"%h - %an, %ar : %s"
+</code></pre>
+  </div>
+
+  <h3>git diff — مشاهده تفاوت‌ها</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Diff working dir vs staging area (unstaged changes)
+git diff
+
+# Diff staging area vs last commit (staged changes)
+git diff --staged
+git diff --cached     # same as --staged
+
+# Diff working dir vs last commit (all changes)
+git diff HEAD
+
+# Diff between two commits
+git diff a1b2c3d d4e5f6g
+
+# Diff between two branches
+git diff main feature/login
+
+# Diff for a specific file
+git diff path/to/file.txt
+
+# Show only file names that changed
+git diff --name-only
+
+# Show stats (insertions/deletions)
+git diff --stat
+
+# Word-level diff (better for prose)
+git diff --word-diff
+</code></pre>
+  </div>
+
+  <h3>git remote — مدیریت remoteها</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># List remote repositories
+git remote -v
+# origin  git@github.com:A-talebifard/repo.git (fetch)
+# origin  git@github.com:A-talebifard/repo.git (push)
+
+# Add a remote
+git remote add origin git@github.com:A-talebifard/repo.git
+
+# Add upstream (for forks)
+git remote add upstream git@github.com:original-owner/repo.git
+
+# Change remote URL (e.g., from HTTPS to SSH)
+git remote set-url origin git@github.com:A-talebifard/repo.git
+
+# Rename a remote
+git remote rename origin github
+
+# Remove a remote
+git remote remove origin
+
+# Show details of a remote
+git remote show origin
+</code></pre>
+  </div>
+
+  <h3>git push و git pull — همگام‌سازی با remote</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Push current branch to origin, set upstream tracking
+git push -u origin main
+# -u is shorthand for --set-upstream
+
+# After first push, just:
+git push
+git push origin main
+
+# Force push (DANGEROUS - rewrites remote history)
+git push --force-with-lease     # safer than --force
+git push -f                     # use only on personal branches!
+
+# Push all branches
+git push --all
+
+# Push tags
+git push --tags
+git push origin v1.0.0
+
+# Delete a remote branch
+git push origin --delete feature/old-branch
+
+# Pull = fetch + merge
+git pull
+git pull origin main
+
+# Pull with rebase (cleaner history)
+git pull --rebase origin main
+
+# Fetch without merging (safer)
+git fetch origin
+git fetch --all --prune
+</code></pre>
+  </div>
+
+  <div class="callout danger">
+    <div class="title">🚨 خطر force push</div>
+    <p>هرگز <code>git push --force</code> روی شاخه‌های اشتراکی (main، develop) انجام ندهید. این کار تاریخچه‌ی remote را بازنویسی می‌کند و commitهای همکاران را از بین می‌برد. همیشه از <code>--force-with-lease</code> استفاده کنید که در صورت وجود commitهای جدید روی remote، عملیات را متوقف می‌کند.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 6: Internals ============================ -->
+<section id="ch6" class="chapter">
+  <span class="chapter-label">Chapter 06</span>
+  <h2>مفاهیم داخلی: Objects و Hashes <a class="anchor-link" href="#ch6">#</a></h2>
+
+  <p>برای تسلط واقعی بر Git، باید بدانید درون پوشه‌ی <code>.git</code> چه می‌گذرد. Git یک پایگاه داده کلید-مقدار است که اشیای مختلفی را با هش SHA-1 (یا SHA-256 در نسخه‌های جدید) ذخیره می‌کند. درک این مفاهیم، حل مشکلات پیچیده و استفاده از ابزارهای پیشرفته را آسان می‌کند.</p>
+
+  <h3>چهار نوع object در Git</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>نوع</th><th>توضیح</th><th>محتوای ذخیره شده</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>blob</code></td><td>محتوای یک فایل</td><td>محتوای باینری فایل (بدون نام)</td></tr>
+        <tr><td><code>tree</code></td><td>یک دایرکتوری</td><td>لیست blobs و trees با نام و حالت</td></tr>
+        <tr><td><code>commit</code></td><td>یک snapshot</td><td>tree، parent(s)، author، message</td></tr>
+        <tr><td><code>tag</code></td><td>تگ annotated</td><td>commit، tagger، message</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    C["Commit Object<br/>SHA: a1b2c3d"]
+    T["Tree Object<br/>(root)<br/>SHA: e5f6g7h"]
+    B1["Blob: README.md<br/>SHA: i9j0k1l"]
+    B2["Blob: package.json<br/>SHA: m3n4o5p"]
+    T2["Tree: src/<br/>SHA: q7r8s9t"]
+    B3["Blob: src/index.js<br/>SHA: u1v2w3x"]
+    C -->|points to| T
+    C -->|parent| C2["Parent Commit<br/>SHA: y4z5a6b"]
+    T -->|entry| B1
+    T -->|entry| B2
+    T -->|entry| T2
+    T2 -->|entry| B3
+    style C fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    style T fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    style T2 fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    style B1 fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style B2 fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style B3 fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style C2 fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Object graph: commit → tree → blobs/subtrees</div>
+  </div>
+
+  <h3>کاوش اشیای داخلی</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Look inside the .git directory
+ls -la .git/
+# HEAD  config  description  hooks/  info/  objects/  refs/
+
+# View the HEAD pointer
+cat .git/HEAD
+# Output: ref: refs/heads/main
+
+# View the type of any object by SHA
+git cat-file -t a1b2c3d
+# Output: commit
+
+# View the content of an object (raw)
+git cat-file -p a1b2c3d
+# Output:
+# tree e5f6g7h...
+# parent y4z5a6b...
+# author Abbas &lt;abbas@example.com&gt; 1700000000 +0330
+# committer Abbas &lt;abbas@example.com&gt; 1700000000 +0330
+#
+# Add user authentication
+
+# Hash a file without storing it (see what hash it WOULD get)
+git hash-object README.md
+# Output: i9j0k1l...
+
+# Write a file to git object database
+git hash-object -w README.md
+
+# List all objects in the database
+git rev-list --all --objects | head -20
+
+# View tree contents
+git ls-tree HEAD
+git ls-tree HEAD src/
+
+# Show commit details
+git show a1b2c3d
+</code></pre>
+  </div>
+
+  <h3>Refs — اشاره‌گرها به commits</h3>
+  <p>Refs نام‌های قابل خواندن برای انسان هستند که به SHA-1 commits اشاره می‌کنند. این‌ها در پوشه‌ی <code>.git/refs</code> ذخیره می‌شوند.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># View all refs
+git show-ref
+
+# Local branches
+ls .git/refs/heads/
+cat .git/refs/heads/main
+# Output: a1b2c3d... (SHA of latest commit on main)
+
+# Remote branches
+ls .git/refs/remotes/origin/
+
+# Tags
+ls .git/refs/tags/
+
+# HEAD points to current branch
+cat .git/HEAD
+# ref: refs/heads/main
+
+# Special refs
+# ORIG_HEAD  - previous HEAD (after reset/merge)
+# MERGE_HEAD - commit being merged in
+# FETCH_HEAD - result of last fetch
+
+# Symbolic ref (HEAD points to a branch)
+git symbolic-ref HEAD
+# refs/heads/main
+
+# Detached HEAD (HEAD points to a commit directly)
+git checkout a1b2c3d
+git symbolic-ref HEAD
+# fatal: ref HEAD is not a symbolic ref
+</code></pre>
+  </div>
+
+  <h3>git reflog — تاریخچه پنهان</h3>
+  <p>Reflog یکی از قدرتمندترین ویژگی‌های Git است. هر بار که HEAD حرکت می‌کند (commit، checkout، reset، rebase)، یک ورودی در reflog ذخیره می‌شود. این تاریخچه محلی است و در repo به اشتراک گذاشته نمی‌شود، اما برای بازیابی commitهای «گم‌شده» بی‌نظیر است.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># View reflog for HEAD
+git reflog
+# Output:
+# a1b2c3d HEAD@{0}: commit: Add feature X
+# y4z5a6b HEAD@{1}: checkout: moving from feature to main
+# 7h8i9j0 HEAD@{2}: reset: moving to HEAD~1
+# k1l2m3n HEAD@{3}: commit: Important work (was "lost")
+
+# View reflog for a specific branch
+git reflog show feature/login
+
+# Recover a "lost" commit
+git reset --hard k1l2m3n   # go back to that commit
+
+# Expire old reflog entries (cleanup)
+git reflog expire --expire=90.days --all
+
+# Garbage collect (permanently remove unreachable objects)
+git gc --prune=now
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ نجات‌بخش</div>
+    <p>اگر تا حالا فکر کرده‌اید «یک commit را گم کردم»، اصلاً نگران نباشید. تا ۹۰ روز (پیش‌فرض)، آن commit در reflog وجود دارد و با <code>git reflog</code> و سپس <code>git reset --hard &lt;sha&gt;</code> قابل بازیابی است. این یکی از بزرگترین مزایای Git نسبت به VCSهای دیگر است.</p>
+  </div>
+
+  <h3>سه حاله‌ی فایل‌ها در .git</h3>
+  <ul>
+    <li><strong>Loose objects</strong> — هر object به صورت فشرده‌شده در یک فایل جدا در <code>.git/objects/ab/cdef...</code> ذخیره می‌شود.</li>
+    <li><strong>Packed objects</strong> — هنگام <code>git gc</code>، اشیای پراکنده در یک فایل <code>.pack</code> فشرده می‌شوند تا فضای کمتری بگیرند.</li>
+    <li><strong>Deltas</strong> — اشیای مشابه به صورت تفاوت با یک base object ذخیره می‌شوند (بدون تغییر در منطق کاربر).</li>
+  </ul>
+</section>
+
+<!-- ============================ CHAPTER 7: Branching ============================ -->
+<section id="ch7" class="chapter">
+  <span class="chapter-label">Chapter 07</span>
+  <h2>Branching (شاخه‌بندی) <a class="anchor-link" href="#ch7">#</a></h2>
+
+  <p>Branching یکی از قدرتمندترین ویژگی‌های Git است. در Git، یک branch فقط یک pointer سبک به یک commit است؛ برخلاف SVN که کل کپی فایل‌ها را کپی می‌کرد. این یعنی ساختن، جابه‌جایی و حذف branch در Git آنی و تقریباً بدون هزینه است. این موضوع، مدل توسعه‌ای که در آن هر قابلیت جدید روی یک branch جدا توسعه می‌یابد، را عملی می‌کند.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+gitGraph
+    commit id: "Initial"
+    commit id: "Setup DB"
+    branch feature/login
+    checkout feature/login
+    commit id: "Add form"
+    commit id: "Add validation"
+    checkout main
+    commit id: "Update docs"
+    merge feature/login
+    commit id: "Release v1"
+    </div>
+    <div class="diagram-title">// Branch lifecycle: create → develop → merge → continue</div>
+  </div>
+
+  <h3>دستورات پایه‌ی Branch</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># List all local branches
+git branch
+# * main
+#   feature/login
+#   feature/signup
+
+# List all branches (local + remote)
+git branch -a
+
+# List branches with last commit info
+git branch -v
+
+# List merged branches (into current)
+git branch --merged
+
+# List unmerged branches
+git branch --no-merged
+
+# Create a new branch (stay on current)
+git branch feature/login
+
+# Create and switch in one step
+git switch -c feature/login
+git checkout -b feature/login    # older syntax
+
+# Switch to an existing branch
+git switch main
+git checkout main                # older syntax
+
+# Switch to previous branch
+git switch -
+git checkout -                   # older syntax
+
+# Rename current branch
+git branch -m new-name
+
+# Rename another branch
+git branch -m old-name new-name
+
+# Delete a fully-merged branch (safe)
+git branch -d feature/login
+
+# Force delete a branch (even if not merged)
+git branch -D feature/login
+
+# Delete a remote branch
+git push origin --delete feature/login
+
+# Track a remote branch
+git switch -c feature/login --track origin/feature/login
+git checkout -b feature/login origin/feature/login
+
+# Push a new branch to remote and set upstream
+git push -u origin feature/login
+</code></pre>
+  </div>
+
+  <h3>Merge — ادغام شاخه‌ها</h3>
+  <p>Merge، تغییرات یک branch را به branch فعلی وارد می‌کند. دو نوع اصلی دارد: Fast-forward و Three-way merge.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph LR
+    subgraph FF["Fast-forward Merge"]
+        A1["C1"] --> A2["C2"] --> A3["C3<br/>(main)"]
+        A3 -.->|fast-forward| A4["C4<br/>(feature)"]
+    end
+    subgraph TW["Three-way Merge"]
+        B1["C1"] --> B2["C2 (main)"]
+        B1 --> B3["C3 (feature)"]
+        B2 --> B4["C4 (main, new)"]
+        B3 --> B4
+        B4 -.->|merge commit| B5["M1"]
+    end
+    style A4 fill:#a6e3a1,stroke:#1e1e2e,color:#1e1e2e
+    style B5 fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Two merge strategies: fast-forward (linear) vs three-way (merge commit)</div>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Switch to target branch (e.g., main)
+git switch main
+
+# Merge feature branch into main
+git merge feature/login
+
+# Fast-forward merge (default when possible)
+# If main hasn't changed since branch was created,
+# Git just moves the main pointer forward
+
+# Three-way merge (when both branches have new commits)
+# Git creates a merge commit with two parents
+
+# Disable fast-forward (always create merge commit)
+git merge --no-ff feature/login
+
+# Force fast-forward (fail if not possible)
+git merge --ff-only feature/login
+
+# Merge with a message
+git merge -m "Merge feature/login into main" feature/login
+
+# Squash merge (combine all commits into one)
+git merge --squash feature/login
+git commit -m "Add login feature (squashed)"
+
+# Abort a merge in progress
+git merge --abort
+
+# Check if a branch is merged
+git branch --merged | grep feature/login
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ چه زمانی کدام؟</div>
+    <p><strong>Fast-forward</strong>: زمانی که main ثابت بوده — تاریخچه خطی تمیز می‌سازد. <strong>--no-ff</strong>: زمانی که می‌خواهید نشان دهید یک feature در یک بازه زمانی توسعه یافته — مرز واضح بین featureها. <strong>Squash</strong>: وقتی feature branch دارای commitهای «WIP» یا نامرتب است و می‌خواهید تاریخچه‌ی main تمیز بماند.</p>
+  </div>
+
+  <h3>عملیات‌های پیشرفته روی Branch</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Show branches that contain a specific commit
+git branch --contains a1b2c3d
+
+# Show remote branches that contain a commit
+git branch -r --contains a1b2c3d
+
+# Compare branches
+git log main..feature/login        # commits in feature, not in main
+git log feature/login..main        # commits in main, not in feature
+git log --left-right main...feature/login  # both, with markers
+
+# Show diff between branch tips
+git diff main feature/login
+
+# Cherry-pick a single commit from another branch
+git cherry-pick a1b2c3d
+
+# Move a branch to a different commit
+git branch -f feature/login a1b2c3d
+
+# Create a branch from a specific commit
+git branch hotfix a1b2c3d
+
+# List branches sorted by last commit date
+git for-each-ref --sort=-committerdate refs/heads/ \
+  --format='%(committerdate:short) %(refname:short)'
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 8: Rebase vs Merge ============================ -->
+<section id="ch8" class="chapter">
+  <span class="chapter-label">Chapter 08</span>
+  <h2>Rebase در برابر Merge <a class="anchor-link" href="#ch8">#</a></h2>
+
+  <p>یکی از مهم‌ترین تصمیمات در کار با Git، انتخاب بین merge و rebase برای یکپارچه‌سازی تغییرات است. هر دو به یک نتیجه‌ی نهایی مشابه می‌رسند (تغییرات دو branch با هم ترکیب می‌شوند)، اما تاریخچه‌ی متفاوتی تولید می‌کنند. درک این تفاوت، کلید داشتن تاریخچه‌ی تمیز و قابل فهم است.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    subgraph Before["Before Integration"]
+        direction LR
+        M1["main: A → B → C"]
+        F1["feature: A → B → D → E"]
+    end
+    subgraph AfterM["After Merge"]
+        direction LR
+        M2["main: A → B → C → M"]
+        F2["feature: A → B → D → E → M"]
+    end
+    subgraph AfterR["After Rebase"]
+        direction LR
+        M3["main: A → B → C"]
+        F3["feature: A → B → C → D' → E'"]
+    end
+    style M fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    style M2 fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    style M3 fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Merge preserves history; rebase rewrites it linearly</div>
+  </div>
+
+  <h3>git merge — حفظ تاریخچه</h3>
+  <p>Merge یک commit جدید (merge commit) می‌سازد که دو والد دارد. تاریخچه واقعی preserved می‌شود: می‌توانید ببینید چه زمانی یک branch شروع شد، چه زمانی به هم پیوست و چه کسی این کار را کرد. این روش برای branchهای اشتراکی امن‌تر است زیرا تاریخچه را بازنویسی نمی‌کند.</p>
+
+  <h3>git rebase — بازنویسی تاریخچه</h3>
+  <p>Rebase commitهای یک branch را برمی‌دارد و آن‌ها را دوباره روی base جدید «دوباره play می‌کند». نتیجه: یک تاریخچه خطی و تمیز. اما این یعنی commitهای جدیدی با SHA جدید ساخته می‌شوند — یعنی تاریخچه بازنویسی شده. این موضوع اگر روی branchهای اشتراکی انجام شود، فاجعه‌بار است.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Basic rebase: replay feature commits on top of main
+git switch feature/login
+git rebase main
+
+# Rebase and then fast-forward main (clean alternative to merge)
+git switch feature/login
+git rebase main
+git switch main
+git merge --ff-only feature/login   # safe now
+
+# Interactive rebase (most powerful tool!)
+git rebase -i HEAD~3
+# Opens editor with last 3 commits:
+# pick a1b2c3d Commit 1
+# pick d4e5f6g Commit 2
+# pick 7h8i9j0 Commit 3
+#
+# Commands you can use:
+# pick   = use commit as-is
+# reword = use commit, but edit message
+# edit   = use commit, but pause to amend
+# squash = combine with previous commit
+# fixup  = like squash, but discard message
+# drop   = remove commit entirely
+# reorder = rearrange lines to reorder commits
+
+# Abort a rebase
+git rebase --abort
+
+# Continue after fixing conflicts
+git rebase --continue
+
+# Skip a commit (if it's empty after rebase)
+git rebase --skip
+
+# Rebase onto a different base (advanced)
+git rebase --onto main old-base feature/login
+</code></pre>
+  </div>
+
+  <h3>مثال: Squash با Interactive Rebase</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Before: 5 messy commits on feature branch
+git log --oneline
+# f5g6h7i WIP: login form
+# j8k9l0m fix typo
+# n1p2q3r WIP: validation
+# s4t5u6v cleanup
+# w7x8y9z Add login feature
+
+# Start interactive rebase for last 5 commits
+git rebase -i HEAD~5
+
+# In editor, change to:
+# pick   w7x8y9z Add login feature
+# squash s4t5u6v cleanup
+# squash n1p2q3r WIP: validation
+# squash j8k9l0m fix typo
+# squash f5g6h7i WIP: login form
+
+# After saving, edit combined message:
+# Add login feature
+#
+# - Form with email/password
+# - Client-side validation
+# - API integration
+
+# Result: 1 clean commit instead of 5
+git log --oneline
+# a1b2c3d Add login feature
+</code></pre>
+  </div>
+
+  <div class="callout danger">
+    <div class="title">🚨 قانون طلایی Rebase</div>
+    <p><strong>هرگز روی commitهای اشتراکی rebase نکنید!</strong> یعنی اگر branchی به remote push شده و همکاران از آن استفاده می‌کنند، rebase نکنید. چون rebase، SHAها را عوض می‌کند، برای همکاران شما به نظر می‌رسد تاریخچه از بین رفته. قانون: <code>rebase برای branchهای محلی و شخصی، merge برای branchهای اشتراکی</code>.</p>
+  </div>
+
+  <h3>جدول مقایسه</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>معیار</th><th>Merge</th><th>Rebase</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>تاریخچه</td><td>واقعی، با merge commits</td><td>خطی، تمیز</td></tr>
+        <tr><td>SHA commits</td><td>حفظ می‌شوند</td><td>عوض می‌شوند</td></tr>
+        <tr><td>روی branch اشتراکی</td><td>✅ امن</td><td>❌ خطرناک</td></tr>
+        <tr><td>پیچیدگی</td><td>ساده</td><td>نیاز به درک عمیق</td></tr>
+        <tr><td>Conflict</td><td>یک‌بار، در merge</td><td>ممکن است در هر commit</td></tr>
+        <tr><td>خوانایی log</td><td>گراف پیچیده</td><td>خطی و واضح</td></tr>
+        <tr><td>پیش‌فرض در</td><td>بیشتر پروژه‌ها</td><td>پروژه‌های large-scale</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 9: Conflict Resolution ============================ -->
+<section id="ch9" class="chapter">
+  <span class="chapter-label">Chapter 09</span>
+  <h2>حل Conflict (تعارض) <a class="anchor-link" href="#ch9">#</a></h2>
+
+  <p>Conflict زمانی رخ می‌دهد که دو نفر همان خط از همان فایل را به روش‌های متفاوت تغییر داده‌اند و Git نمی‌تواند به طور خودکار تصمیم بگیرد کدام را نگه دارد. Conflict طبیعی است و نشانه‌ی بد بودن کد نیست؛ بلکه نشانه‌ی کار همزمان است. در این فصل، نشانه‌ها، روش حل دستی و استفاده از ابزارها را می‌آموزید.</p>
+
+  <h3>Conflict چه شکلی است؟</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">text</span></div>
+<pre><code class="language-text">// Original file (on main):
+function greet(name) {
+  return "Hello, " + name;
+}
+
+// During merge, Git shows conflict like this:
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+function greet(name) {
+  return "Hi, " + name + "!";
+}
+=======
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login
+
+// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD : your current branch (HEAD)
+// ======= : separator
+// &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login : incoming branch
+</code></pre>
+  </div>
+
+  <h3>مراحل حل Conflict</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Identify conflicted files
+git status
+# Output:
+# Unmerged paths:
+#   both modified:   src/auth.js
+#   both modified:   README.md
+
+# Step 2: Open each conflicted file in your editor
+# Look for &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt; markers
+# Edit to keep the final desired code (remove all markers)
+
+# Step 3: Stage the resolved files
+git add src/auth.js README.md
+
+# Step 4: Complete the merge
+git commit
+# (For rebase: git rebase --continue)
+
+# ===== If you want to abort the merge entirely =====
+git merge --abort
+# (For rebase: git rebase --abort)
+
+# ===== View conflicts in a visual mergetool =====
+git mergetool
+# Opens configured merge tool (VS Code, Meld, KDiff3, Beyond Compare)
+
+# Configure default mergetool
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+</code></pre>
+  </div>
+
+  <h3>استراتژی‌های merge خودکار</h3>
+  <p>Git برای فایل‌های متفاوت یا خطوط متفاوت، خودکار conflict را حل می‌کند. اما می‌توانید استراتژی پیش‌فرض را تغییر دهید.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Default strategy: recursive (now called "ort" in modern Git)
+git merge feature/login
+
+# Prefer "ours" — keep our version on conflict
+git merge -X ours feature/login
+
+# Prefer "theirs" — keep their version on conflict
+git merge -X theirs feature/login
+
+# Show common ancestor in conflict markers (helpful!)
+git merge -X diff-algorithm=histogram feature/login
+
+# Use a specific strategy
+git merge -s recursive feature/login
+git merge -s octopus branch1 branch2 branch3  # for 3+ branches
+git merge -s ours redundant-branch            # discard their changes, just record merge
+
+# ===== Pull strategies for conflicts =====
+# When pulling, prefer rebase to avoid extra merge commits
+git config --global pull.rebase true
+
+# Or set per-pull
+git pull --rebase origin main
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ نکات کاهش Conflict</div>
+    <p>۱) <strong>ارتباط مداوم</strong>: قبل از شروع کار، pull کنید. ۲) <strong>branchهای کوتاه‌مدت</strong>: هرچه branch طولانی‌تر باشد، احتمال conflict بیشتر. ۳) <strong>فایل‌های کوچک و ماژولار</strong>: اگر همه روی یک فایل بزرگ کار کنند، conflict قطعی است. ۴) <strong>قراردادهای کدنویسی</strong>: فرمت یکسان (Prettier، ESLint) conflictهای مصنوعی را کم می‌کند.</p>
+  </div>
+
+  <h3>Conflict در عمل: مثال واقعی</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Scenario: You're on feature/login, your colleague pushed to main
+
+# 1. Try to merge latest main into your feature
+git switch feature/login
+git merge main
+# CONFLICT (content): Merge conflict in src/auth.js
+
+# 2. View the conflict
+git diff
+# Shows the &lt;&lt;&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt; markers
+
+# 3. Open in editor, manually resolve
+# Before:
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+const API_URL = "https://api.staging.example.com";
+=======
+const API_URL = "https://api.example.com";
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; main
+
+# After resolution (you decide which, or combine):
+const API_URL = process.env.API_URL || "https://api.example.com";
+
+# 4. Stage and commit
+git add src/auth.js
+git commit -m "Merge main into feature/login, resolve API_URL conflict"
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 10: Branching Strategies ============================ -->
+<section id="ch10" class="chapter">
+  <span class="chapter-label">Chapter 10</span>
+  <h2>استراتژی‌های Branching <a class="anchor-link" href="#ch10">#</a></h2>
+
+  <p>استراتژی branching، قواعد نام‌گذاری و workflow شاخه‌ها در یک تیم است. انتخاب استراتژی مناسب، بسته به اندازه تیم، نوع پروژه و فرکانس release متفاوت است. در این فصل، سه استراتژی اصلی را بررسی می‌کنیم: Git Flow (جامع برای نسخه‌گذاری)، GitHub Flow (ساده برای web apps) و Trunk-Based (سریع برای CI/CD).</p>
+
+  <h3>۱. Git Flow</h3>
+  <p>گسترده‌ترین استراتژی برای پروژه‌های نسخه‌گذاری شده (مثل نرم‌افزارهای دسکتاپ، کتابخانه‌ها). توسط Vincent Driessen در ۲۰۱۰ معرفی شد. شش نوع branch دارد و برای releaseهای برنامه‌ریزی‌شده مناسب است.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+gitGraph
+    commit id: "v1.0"
+    branch develop
+    checkout develop
+    commit id: "dev-1"
+    branch feature/A
+    checkout feature/A
+    commit id: "feat-A1"
+    commit id: "feat-A2"
+    checkout develop
+    merge feature/A
+    branch release/v1.1
+    checkout release/v1.1
+    commit id: "release-prep"
+    checkout main
+    merge release/v1.1 tag: "v1.1"
+    branch hotfix/v1.1.1
+    checkout hotfix/v1.1.1
+    commit id: "critical-fix"
+    checkout main
+    merge hotfix/v1.1.1 tag: "v1.1.1"
+    checkout develop
+    merge hotfix/v1.1.1
+    </div>
+    <div class="diagram-title">// Git Flow: 6 branch types — main, develop, feature, release, hotfix, (support)</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Branch</th><th>منبع</th><th>مقصد merge</th><th>هدف</th></tr></thead>
+      <tbody>
+        <tr><td><code>main</code></td><td>—</td><td>—</td><td>کد production</td></tr>
+        <tr><td><code>develop</code></td><td>main</td><td>main (via release)</td><td>تلفیق featureها</td></tr>
+        <tr><td><code>feature/*</code></td><td>develop</td><td>develop</td><td>قابلیت‌های جدید</td></tr>
+        <tr><td><code>release/*</code></td><td>develop</td><td>main + develop</td><td>آماده‌سازی release</td></tr>
+        <tr><td><code>hotfix/*</code></td><td>main</td><td>main + develop</td><td>رفع باگ production</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>۲. GitHub Flow</h3>
+  <p>استراتژی ساده و سبک که GitHub پیشنهاد می‌دهد. فقط دو نوع branch: main و feature. مناسب پروژه‌هایی که به طور مداوم deploy می‌شوند (SaaS، web apps). هیچ release branch یا develop branch ندارد.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+gitGraph
+    commit id: "deploy-1"
+    branch feature/dark-mode
+    checkout feature/dark-mode
+    commit id: "add toggle"
+    commit id: "style"
+    checkout main
+    merge feature/dark-mode
+    commit id: "deploy-2"
+    branch feature/api
+    checkout feature/api
+    commit id: "endpoint"
+    checkout main
+    merge feature/api
+    commit id: "deploy-3"
+    </div>
+    <div class="diagram-title">// GitHub Flow: main + feature branches, deploy after every merge</div>
+  </div>
+
+  <h3>۳. Trunk-Based Development</h3>
+  <p>همه روی یک branch اصلی (trunk) کار می‌کنند. feature branches کوتاه‌مدت (یک تا دو روز) هستند. مناسب تیم‌های با CI/CD قوی که می‌خواهند سرعت deploy بالا باشد. گوگل، فیسبوک و Netflix از این مدل استفاده می‌کنند.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+gitGraph
+    commit id: "C1"
+    branch short-feature
+    checkout short-feature
+    commit id: "F1"
+    checkout main
+    merge short-feature
+    commit id: "C2"
+    branch short-bugfix
+    checkout short-bugfix
+    commit id: "B1"
+    checkout main
+    merge short-bugfix
+    commit id: "C3"
+    </div>
+    <div class="diagram-title">// Trunk-Based: very short-lived branches, frequent integration</div>
+  </div>
+
+  <h3>مقایسه استراتژی‌ها</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>معیار</th><th>Git Flow</th><th>GitHub Flow</th><th>Trunk-Based</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>پیچیدگی</td><td>بالا</td><td>پایین</td><td>پایین</td></tr>
+        <tr><td>تعداد branchها</td><td>۶</td><td>۲</td><td>۱-۲</td></tr>
+        <tr><td>فرکانس release</td><td>هفته‌ای/ماهانه</td><td>روزانه</td><td>چند بار در روز</td></tr>
+        <tr><td>نیاز به CI/CD</td><td>متوسط</td><td>بالا</td><td>بسیار بالا</td></tr>
+        <tr><td>مناسب برای</td><td>نسخه‌گذاری شده</td><td>Web apps</td><td>SaaS بزرگ</td></tr>
+        <tr><td>هزینه آموزش</td><td>زیاد</td><td>کم</td><td>متوسط</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout note">
+    <div class="title">💡 انتخاب هوشمندانه</div>
+    <p>برای اکثر پروژه‌های کوچک و متوسط، <strong>GitHub Flow</strong> بهترین انتخاب است. ساده، قابل فهم و برای عملیات روزانه کافی است. <strong>Git Flow</strong> را فقط برای پروژه‌هایی با releaseهای رسمی (مثل کتابخانه‌های open source) انتخاب کنید. <strong>Trunk-Based</strong> را فقط اگر CI/CD قوی دارید و تیم به اندازه کافی بزرگ است، در نظر بگیرید.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 11: GitHub Setup ============================ -->
+<section id="ch11" class="chapter">
+  <span class="chapter-label">Chapter 11</span>
+  <h2>GitHub — معرفی و راه‌اندازی <a class="anchor-link" href="#ch11">#</a></h2>
+
+  <p>GitHub سرویس میزبانی Git مبتنی بر وب است که در سال ۲۰۰۸ تأسیس شد و در ۲۰۱۸ توسط مایکروسافت خریداری شد. با بیش از ۱۰۰ میلیون توسعه‌دهنده، بزرگ‌ترین پلتفرم collaboration برای کد در جهان است. GitHub روی Git ساخته شده و قابلیت‌هایی مثل Pull Request، Issues، Actions و Projects را اضافه می‌کند.</p>
+
+  <h3>Fork در برابر Clone</h3>
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph LR
+    O["Original Repo<br/>(github.com/upstream/repo)"]
+    F["Your Fork<br/>(github.com/A-talebifard/repo)"]
+    L["Local Clone<br/>(your machine)"]
+    O -->|fork| F
+    F -->|clone| L
+    L -->|push| F
+    F -->|PR| O
+    L -.->|fetch upstream| O
+    style O fill:#f38ba8,stroke:#1e1e2e,color:#1e1e2e
+    style F fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    style L fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Fork = server-side copy on GitHub; Clone = local copy</div>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># ===== Scenario: Contributing to someone else's project =====
+
+# Step 1: Fork on GitHub (via web UI: click "Fork" button)
+# Now you have: github.com/A-talebifard/their-project
+
+# Step 2: Clone YOUR fork (not the original)
+git clone git@github.com:A-talebifard/their-project.git
+cd their-project
+
+# Step 3: Add upstream remote (original repo)
+git remote add upstream git@github.com:original-owner/their-project.git
+
+# Step 4: Create a feature branch
+git switch -c feature/my-contribution
+
+# Step 5: Make changes, commit, push to your fork
+git push -u origin feature/my-contribution
+
+# Step 6: Open Pull Request on GitHub (your-fork → upstream)
+
+# Step 7: Keep your fork in sync with upstream
+git fetch upstream
+git switch main
+git merge upstream/main
+git push origin main
+
+# ===== Using GitHub CLI (gh) =====
+# Install: https://cli.github.com/
+
+gh auth login                          # one-time setup
+gh repo clone A-talebifard/their-project
+gh repo fork original-owner/repo --clone
+gh pr create --title "Add dark mode" --body "Resolves #42"
+gh pr status
+gh pr checkout 123                     # checkout PR #123 locally
+gh pr merge 123 --squash --delete-branch
+</code></pre>
+  </div>
+
+  <h3>Personal Access Tokens (PAT)</h3>
+  <p>از آگوست ۲۰۲۱، GitHub دیگر اجازه نمی‌دهد با پسورد اکانت از طریق HTTPS به repository ها push کنید. به جای آن، باید از Personal Access Token استفاده کنید. دو نوع PAT وجود دارد: Classic (با scope‌های دستی) و Fine-grained (با دسترسی دقیق به هر repo).</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Create PAT:
+# GitHub → Settings → Developer settings → Personal access tokens → Generate new token
+
+# Classic PAT scopes (for git operations):
+# - repo (full control of private repos)
+# - workflow (update GitHub Actions workflows)
+# - read:org (read org and team membership)
+
+# Use PAT in place of password (HTTPS)
+git clone https://github.com/A-talebifard/repo.git
+# Username: A-talebifard
+# Password: &lt;your-PAT&gt;
+
+# Cache credentials (avoid entering every time)
+git config --global credential.helper store        # plain text (not secure)
+git config --global credential.helper cache        # in-memory for 15 min
+git config --global credential.helper 'cache --timeout=3600'  # 1 hour
+
+# macOS: use Keychain
+git config --global credential.helper osxkeychain
+
+# Windows: use Git Credential Manager (default with Git for Windows)
+git config --global credential.helper manager
+
+# Embed PAT in URL (NOT recommended, but possible)
+git remote set-url origin https://A-talebifard:&lt;PAT&gt;@github.com/A-talebifard/repo.git
+</code></pre>
+  </div>
+
+  <h3>README.md — ویترین پروژه</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">markdown</span></div>
+<pre><code class="language-markdown"># Project Name
+
+&gt; Short one-line description of what this project does.
+
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Build](https://img.shields.io/github/workflow/status/A-talebifard/repo/CI)
+![Stars](https://img.shields.io/github/stars/A-talebifard/repo)
+
+## Features
+
+- ✨ Feature one
+- 🚀 Feature two
+- 🔒 Feature three
+
+## Installation
+
+```bash
+npm install project-name
+```
+
+## Quick Start
+
+```javascript
+import { doSomething } from 'project-name';
+
+doSomething({ option: true });
+```
+
+## Documentation
+
+Full docs at [https://docs.example.com](https://docs.example.com)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT © [Abbas Talebifard](https://github.com/A-talebifard)
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ README خوب چه ویژگی دارد؟</div>
+    <p>۱) یک تگline description در ابتدا. ۲) Badgeهای وضعیت (build، license، version). ۳) بخش Installation واضح. ۴) مثال Quick Start قابل کپی. ۵) لینک به مستندات کامل. ۶) بخش Contributing. ۷) License. README اولین چیزی است که کاربر می‌بیند؛ تا ۳۰ ثانیه اول قانع‌کننده نباشد، کاربر می‌رود.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 12: Pull Request ============================ -->
+<section id="ch12" class="chapter">
+  <span class="chapter-label">Chapter 12</span>
+  <h2>Pull Request — گردش کار کامل <a class="anchor-link" href="#ch12">#</a></h2>
+
+  <p>Pull Request (PR) قلب همکاری در GitHub است. PR یک درخواست رسمی برای merge کردن تغییرات شما به یک branch دیگر (معمولاً main) است. این فرآیند، فرصتی برای code review، بحث درباره‌ی تغییرات، اجرای CI و در نهایت ادغام است. در این فصل، چرخه‌ی کامل PR را از ساخت تا merge می‌بینیم.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart TB
+    A["1. Create feature branch<br/>git switch -c feature/X"]
+    B["2. Make changes &amp; commit"]
+    C["3. Push to your fork/origin<br/>git push -u origin feature/X"]
+    D["4. Open Pull Request<br/>on GitHub"]
+    E["5. CI checks run<br/>Tests, lint, build"]
+    F["6. Code review<br/>Comments, suggestions"]
+    G{"Review approved?"}
+    H["7. Address feedback<br/>push more commits"]
+    I["8. Merge to main<br/>squash/merge/rebase"]
+    J["9. Delete feature branch"]
+    K["10. Deploy to production"]
+
+    A --> B --> C --> D --> E --> F --> G
+    G -->|No| H --> C
+    G -->|Yes| I --> J --> K
+    style G fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style I fill:#a6e3a1,stroke:#1e1e2e,color:#1e1e2e
+    style K fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Complete PR lifecycle: from branch creation to deployment</div>
+  </div>
+
+  <h3>گردش کار عملی</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># ===== Step 1: Sync with main before starting =====
+git switch main
+git pull origin main
+
+# ===== Step 2: Create a feature branch with descriptive name =====
+git switch -c feature/add-jwt-auth
+# Naming conventions:
+# feature/xxx  - new features
+# fix/xxx      - bug fixes
+# docs/xxx     - documentation
+# refactor/xxx - code refactoring
+# chore/xxx    - maintenance tasks
+
+# ===== Step 3: Make changes, commit in logical chunks =====
+git add src/auth.js
+git commit -m "feat(auth): implement JWT generation"
+git add src/middleware.js
+git commit -m "feat(auth): add auth middleware"
+git add tests/auth.test.js
+git commit -m "test(auth): cover token validation"
+
+# ===== Step 4: Push to remote =====
+git push -u origin feature/add-jwt-auth
+
+# ===== Step 5: Open PR via GitHub CLI =====
+gh pr create \
+  --title "feat(auth): Add JWT authentication" \
+  --body "## Description
+Implements JWT-based authentication for the API.
+
+## Type of Change
+- [x] New feature
+- [ ] Bug fix
+- [ ] Breaking change
+
+## Testing
+- [x] Unit tests pass
+- [x] Manual testing on staging
+
+## Related Issue
+Closes #42
+
+## Checklist
+- [x] Code follows style guide
+- [x] Self-review completed
+- [x] Documentation updated
+- [x] No new warnings" \
+  --base main \
+  --head feature/add-jwt-auth
+
+# ===== Step 6: After review feedback, make more commits =====
+git add src/auth.js
+git commit -m "fix(auth): handle expired tokens"
+git push   # automatically updates the PR
+
+# ===== Step 7: View PR status =====
+gh pr view --web
+gh pr checks
+
+# ===== Step 8: After approval, merge (choose strategy) =====
+gh pr merge 123 --squash --delete-branch   # recommended
+gh pr merge 123 --merge --delete-branch    # preserves all commits
+gh pr merge 123 --rebase --delete-branch   # linear history
+
+# ===== Step 9: Sync local main =====
+git switch main
+git pull origin main
+git branch -d feature/add-jwt-auth   # cleanup
+</code></pre>
+  </div>
+
+  <h3>سه استراتژی Merge در GitHub</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>استراتژی</th><th>توضیح</th><th>تاریخچه نهایی</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Merge commit</strong></td><td>یک merge commit با همه commitهای branch</td><td>کامل، با گراف شاخه‌ها</td></tr>
+        <tr><td><strong>Squash</strong></td><td>همه commitها را یکی می‌کند</td><td>تمیز، یک commit per PR</td></tr>
+        <tr><td><strong>Rebase</strong></td><td>commitها را روی main rebase می‌کند</td><td>خطی، همه commitها preserved</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>PR Template</h3>
+  <p>برای استاندارد کردن PRها، یک فایل در <code>.github/PULL_REQUEST_TEMPLATE.md</code> بسازید تا برای هر PR خودکار ظاهر شود.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">markdown</span></div>
+<pre><code class="language-markdown">## Description
+
+&lt;!-- Brief description of what this PR does --&gt;
+
+## Type of Change
+
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
+- [ ] Refactor (no functional changes)
+
+## Related Issue
+
+Closes #(issue-number)
+
+## Testing
+
+- [ ] Unit tests added/updated
+- [ ] Integration tests pass
+- [ ] Manual testing completed
+
+## Screenshots (if applicable)
+
+&lt;!-- Drag and drop screenshots here --&gt;
+
+## Checklist
+
+- [ ] My code follows the project's style guide
+- [ ] I have performed a self-review
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have updated documentation accordingly
+- [ ] My changes generate no new warnings
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ Code Review Etiquette</div>
+    <p>۱) به کد نقد کنید، نه به نفر. ۲) فرق بین «must fix» و «nit» را مشخص کنید. ۳) پیشنهاد به جای دستور: «چه می‌شود اگر...» به جای «این را عوض کن». ۴) خوبی‌ها را هم بگویید، نه فقط مشکلات. ۵) اگر بحث طولانی شد، به جای کامنت، تماس تصویری بگیرید. ۶) برای کامنت‌های خود، یک reaction (emoji) بگذارید تا مشخص باشد addressed شده.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 13: Issues & Projects ============================ -->
+<section id="ch13" class="chapter">
+  <span class="chapter-label">Chapter 13</span>
+  <h2>Issues و Project Management <a class="anchor-link" href="#ch13">#</a></h2>
+
+  <p>GitHub Issues سیستم ردیابی باگ‌ها، taskها و inquests است که مستقیماً در repo ادغام شده. به‌همراه Projects v2 و Discussions، یک پلتفرم کامل مدیریت پروژه را فراهم می‌کند. در این فصل، بهترین روش‌های استفاده از Issues، Labels، Milestones و Projects را می‌بینیم.</p>
+
+  <h3>Issues — ساخت و مدیریت</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Create issue via CLI
+gh issue create \
+  --title "Bug: Login button not working on Safari" \
+  --body "## Description
+The login button does not respond on Safari 17.
+
+## Steps to Reproduce
+1. Go to /login
+2. Enter credentials
+3. Click 'Sign In'
+
+## Expected
+Redirect to dashboard
+
+## Actual
+Nothing happens, console shows TypeError
+
+## Environment
+- Safari 17.0
+- macOS 14.0
+- Production: https://app.example.com
+
+## Screenshots
+&lt;!-- drag screenshot here --&gt;
+
+## Labels
+bug, frontend, safari, P1" \
+  --label "bug,P1" \
+  --assignee "@me" \
+  --project "Q4 Sprint"
+
+# List open issues
+gh issue list
+gh issue list --state closed --limit 20
+gh issue list --assignee "@me" --label "bug"
+
+# View an issue
+gh issue view 42
+gh issue view 42 --web
+
+# Close/reopen
+gh issue close 42
+gh issue close 42 --reason "completed"  # or "not planned"
+gh issue reopen 42
+
+# Comment on an issue
+gh issue comment 42 --body "Fixed in PR #43"
+
+# Add labels, assignees
+gh issue edit 42 --add-label "high-priority"
+gh issue edit 42 --add-assignee "A-talebifard"
+</code></pre>
+  </div>
+
+  <h3>Issue Template</h3>
+  <p>برای استاندارد کردن issueها، تمپلیت‌ها در <code>.github/ISSUE_TEMPLATE/</code> قرار دهید. این کار، اطلاعات لازم را از کاربر می‌گیرد و کیفیت گزارش‌ها را بالا می‌برد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">yaml</span></div>
+<pre><code class="language-yaml"># .github/ISSUE_TEMPLATE/bug_report.yml
+name: Bug Report
+description: Report a bug to help us improve
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the bug
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+  - type: input
+    id: version
+    attributes:
+      label: App Version
+      placeholder: "v1.2.3"
+</code></pre>
+  </div>
+
+  <h3>Labels — دسته‌بندی</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دسته</th><th>Labels پیش‌فرض</th><th>هدف</th></tr></thead>
+      <tbody>
+        <tr><td>نوع</td><td><code>bug</code>, <code>enhancement</code>, <code>feature</code></td><td>چه چیزی</td></tr>
+        <tr><td>وضعیت</td><td><code>triage</code>, <code>in-progress</code>, <code>blocked</code></td><td>کجای workflow</td></tr>
+        <tr><td>اولویت</td><td><code>P0</code>, <code>P1</code>, <code>P2</code>, <code>P3</code></td><td>چقدر فوری</td></tr>
+        <tr><td>محدوده</td><td><code>frontend</code>, <code>backend</code>, <code>docs</code>, <code>ci</code></td><td>کدام بخش</td></tr>
+        <tr><td>سختی</td><td><code>good-first-issue</code>, <code>help-wanted</code></td><td>برای newcomers</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Milestones — نقاط عطف</h3>
+  <p>Milestone گروهی از issueها و PRها را برای یک هدف مشخص (مثل release v2.0) گرد هم می‌آورد. به شما اجازه می‌دهد پیشرفت به سمت یک هدف را ببینید.</p>
+
+  <h3>GitHub Projects v2</h3>
+  <p>Projects v2 یک ابزار مدیریت پروژه انعطاف‌پذیر است که Kanban، Table، Roadmap و Timeline viewها را پشتیبانی می‌کند. برخلاف v1، می‌تواند cross-repo باشد و از Issues، PRs و Draft Issues استفاده کند.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph LR
+    subgraph Project["GitHub Project v2"]
+        T["Backlog<br/>(Drafts)"]
+        U["In Progress<br/>(Issues + PRs)"]
+        R["In Review<br/>(PRs)"]
+        D["Done<br/>(Closed)"]
+        T --> U --> R --> D
+    end
+    Repo1["Repo A Issues"]
+    Repo2["Repo B Issues"]
+    Repo3["Repo C PRs"]
+    Repo1 -.-> T
+    Repo2 -.-> T
+    Repo3 -.-> R
+    style T fill:#45475a,stroke:#c084fc,color:#cdd6f4
+    style U fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style R fill:#89b4fa,stroke:#1e1e2e,color:#1e1e2e
+    style D fill:#a6e3a1,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Cross-repo project board: pull issues/PRs from multiple repos</div>
+  </div>
+
+  <h3>Discussions — گفتگوهای طولانی</h3>
+  <p>برای پرسش‌ها، ایده‌ها و گفتگوهای طولانی که issue نیستند، GitHub Discussions را فعال کنید (Settings → Features → Discussions). مناسب FAQ، Announcements و Community است.</p>
+</section>
+
+<!-- ============================ CHAPTER 14: GitHub Actions ============================ -->
+<section id="ch14" class="chapter">
+  <span class="chapter-label">Chapter 14</span>
+  <h2>GitHub Actions — CI/CD <a class="anchor-link" href="#ch14">#</a></h2>
+
+  <p>GitHub Actions پلتفرم CI/CD داخلی GitHub است که در ۲۰۱۹ معرفی شد. به شما اجازه می‌دهد workflowهای خودکاری بسازید که در رویدادهای مختلف (push، PR، release، schedule) اجرا شوند. با هزاران action آماده در Marketplace، تقریباً هر کاری می‌توان خودکار کرد.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+flowchart LR
+    subgraph Trigger["Triggers"]
+        T1[push]
+        T2[pull_request]
+        T3[schedule]
+        T4[release]
+        T5[workflow_dispatch]
+    end
+    subgraph Runner["Runner (Ubuntu/Windows/macOS)"]
+        J1["Job 1: Lint"]
+        J2["Job 2: Test"]
+        J3["Job 3: Build"]
+        J4["Job 4: Deploy"]
+        J1 --> J2 --> J3 --> J4
+    end
+    T1 -.-> J1
+    T2 -.-> J1
+    T4 -.-> J4
+    style T1 fill:#f38ba8,stroke:#1e1e2e,color:#1e1e2e
+    style J4 fill:#a6e3a1,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// GitHub Actions: events trigger jobs that run on runners</div>
+  </div>
+
+  <h3>ساختار یک Workflow</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">yaml</span></div>
+<pre><code class="language-yaml"># .github/workflows/ci.yml
+name: CI
+
+# When should this workflow run?
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  # Schedule: every day at 3 AM UTC
+  schedule:
+    - cron: "0 3 * * *"
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: 'Enable debug mode'
+        type: boolean
+        default: false
+
+# Environment variables available to all jobs
+env:
+  NODE_VERSION: '20'
+  CI: true
+
+jobs:
+  # ===== Job 1: Lint =====
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci   # clean install (faster than npm install)
+
+      - name: Run ESLint
+        run: npm run lint
+
+  # ===== Job 2: Test =====
+  test:
+    runs-on: ubuntu-latest
+    needs: lint   # wait for lint job
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
+        env:
+          COVERAGE: true
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.os }}-${{ matrix.node-version }}
+          path: coverage/
+
+  # ===== Job 3: Build &amp; Deploy =====
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+
+      - name: Deploy to production
+        run: |
+          echo "Deploying..."
+          ./scripts/deploy.sh
+</code></pre>
+  </div>
+
+  <h3>Secrets و Variables</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">yaml</span></div>
+<pre><code class="language-yaml"># Steps to add a secret:
+# Repo → Settings → Secrets and variables → Actions → New repository secret
+
+# Use in workflow:
+steps:
+  - name: Use secret
+    run: |
+      curl -X POST https://api.example.com \
+        -H "Authorization: Bearer ${{ secrets.API_TOKEN }}"
+
+  - name: Use variable (non-sensitive)
+    run: echo "Environment is ${{ vars.ENVIRONMENT }}"
+
+# Organization-level secrets (shared across repos):
+# Org → Settings → Secrets → Actions
+
+# Environment secrets (per-deployment):
+# Repo → Settings → Environments → production → Add secret
+jobs:
+  deploy:
+    environment: production   # requires approval
+    steps:
+      - run: ./deploy.sh
+        env:
+          PROD_KEY: ${{ secrets.PROD_KEY }}
+</code></pre>
+  </div>
+
+  <h3>Workflow پیشرفته: Release خودکار</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">yaml</span></div>
+<pre><code class="language-yaml"># .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'   # triggers on tags like v1.0.0, v2.1.3
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # required to create release
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history for changelog
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install &amp; build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Generate changelog
+        id: changelog
+        uses: mikepenz/release-changelog-builder-action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ steps.changelog.outputs.changelog }}
+          files: |
+            dist/*.zip
+            dist/*.tar.gz
+            CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ بهترین روش‌های Actions</div>
+    <p>۱) همیشه <code>actions/checkout@v4</code> را pin کنید (نه <code>@main</code>). ۲) از <code>npm ci</code> به جای <code>npm install</code> استفاده کنید (سریع‌تر و قابل پیش‌بینی). ۳) Caching را فعال کنید (می‌تواند CI را ۵۰٪ سریع‌تر کند). ۴) Secrets را هرگز در log چاپ نکنید. ۵) Job parallelism را با <code>strategy.matrix</code> افزایش دهید. ۶) از Environment protection rules برای production استفاده کنید (approval لازم).</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 15: GitHub Pages ============================ -->
+<section id="ch15" class="chapter">
+  <span class="chapter-label">Chapter 15</span>
+  <h2>GitHub Pages — هاست رایگان <a class="anchor-link" href="#ch15">#</a></h2>
+
+  <p>GitHub Pages سرویس هاستینگ استاتیک رایگان GitHub است که اجازه می‌دهد سایت خود را مستقیماً از repo deploy کنید. مناسب برای portfolio، blog، مستندات پروژه و landing page است. هر اکانت GitHub یک سایت کاربر (<code>username.github.io</code>) و unlimited سایت پروژه (<code>username.github.io/repo</code>) رایگان دارد.</p>
+
+  <h3>ساخت User Page</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Create a special repo named exactly: username.github.io
+# For example: A-talebifard.github.io
+
+# Step 2: Clone and add content
+git clone git@github.com:A-talebifard/A-talebifard.github.io.git
+cd A-talebifard.github.io
+echo "&lt;h1&gt;Hello World&lt;/h1&gt;" &gt; index.html
+git add .
+git commit -m "Initial site"
+git push
+
+# Step 3: Visit https://A-talebifard.github.io (live in ~1 min)
+</code></pre>
+  </div>
+
+  <h3>ساخت Project Page</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Any repo can have a Pages site
+
+# Option A: From /docs folder on main branch
+mkdir docs
+echo "&lt;h1&gt;My Project&lt;/h1&gt;" &gt; docs/index.html
+git add docs/
+git commit -m "Add docs site"
+git push
+
+# Then: Repo → Settings → Pages → Source: main /docs folder
+
+# Option B: From gh-pages branch
+git switch --orphan gh-pages
+git rm -rf .
+echo "&lt;h1&gt;My Project&lt;/h1&gt;" &gt; index.html
+git add .
+git commit -m "Initial gh-pages"
+git push origin gh-pages
+
+# Site URL: https://username.github.io/repo-name/
+</code></pre>
+  </div>
+
+  <h3>Deploy با GitHub Actions</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">yaml</span></div>
+<pre><code class="language-yaml"># .github/workflows/deploy-pages.yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+</code></pre>
+  </div>
+
+  <h3>Custom Domain</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Add CNAME file in repo root or /docs
+echo "www.example.com" > CNAME
+git add CNAME
+git commit -m "Add custom domain"
+git push
+
+# Step 2: Configure DNS
+# For subdomain (www.example.com):
+#   CNAME www -&gt; username.github.io
+# For apex (example.com):
+#   A @ -&gt; 185.199.108.153
+#   A @ -&gt; 185.199.109.153
+#   A @ -&gt; 185.199.110.153
+#   A @ -&gt; 185.199.111.153
+
+# Step 3: Enable HTTPS
+# Repo → Settings → Pages → Custom domain → Enforce HTTPS ✓
+
+# Step 4: Verify in 24-48 hours
+curl -I https://www.example.com
+</code></pre>
+  </div>
+
+  <div class="callout note">
+    <div class="title">💡 Jekyll —Static Site Generator</div>
+    <p>GitHub Pages به طور پیش‌فرض از Jekyll (Ruby) پشتیبانی می‌کند. کافیست فایل‌های Markdown بسازید و Jekyll خودکار آن‌ها را به HTML تبدیل می‌کند. برای پروژه‌های مدرن، می‌توانید از Next.js، Astro، Hugo یا VitePress هم استفاده کنید و خروجی build را deploy کنید.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 16: Undo & Reset ============================ -->
+<section id="ch16" class="chapter">
+  <span class="chapter-label">Chapter 16</span>
+  <h2>Undo و Reset <a class="anchor-link" href="#ch16">#</a></h2>
+
+  <p>یکی از پرکاربردترین موضوعات Git، «برگرداندن» تغییرات است. اما کلمه‌ی «undo» در Git چند معنی دارد: می‌توانید یک commit را برگردانید، فایل را به حالت قبلی برگردانید، یا تاریخچه را بازنویس کنید. در این فصل، تفاوت‌های ظریف بین reset، revert و checkout را می‌آموزید.</p>
+
+  <h3>سه حالت‌ی git reset</h3>
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    subgraph Before["Before Reset"]
+        B1["HEAD"] --> B2["Commit C (latest)"]
+        B2 --> B3["Commit B"]
+        B3 --> B4["Commit A"]
+    end
+    subgraph Soft["reset --soft HEAD~1"]
+        S1["HEAD"] --> S2["Commit B"]
+        S2 --> S3["Commit A"]
+        S4["Staging: changes of C<br/>(still staged)"]
+    end
+    subgraph Mixed["reset --mixed HEAD~1 (default)"]
+        M1["HEAD"] --> M2["Commit B"]
+        M2 --> M3["Commit A"]
+        M4["Working dir: changes of C<br/>(unstaged)"]
+    end
+    subgraph Hard["reset --hard HEAD~1"]
+        H1["HEAD"] --> H2["Commit B"]
+        H2 --> H3["Commit A"]
+        H4["Changes of C: GONE"]
+    end
+    style S4 fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style M4 fill:#f9e2af,stroke:#1e1e2e,color:#1e1e2e
+    style H4 fill:#f38ba8,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Three reset modes: soft (keep staged), mixed (unstage), hard (discard)</div>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># ===== git reset --soft =====
+# Moves HEAD only; staging area and working dir unchanged
+git reset --soft HEAD~1
+# Use case: "I want to re-commit my last commit with a different message
+# or split it into multiple commits"
+
+# ===== git reset --mixed (default) =====
+# Moves HEAD + unstages changes (but keeps them in working dir)
+git reset HEAD~1
+git reset --mixed HEAD~1
+# Use case: "I committed too early, want to re-stage selectively"
+
+# ===== git reset --hard =====
+# Moves HEAD + discards all changes (DANGEROUS!)
+git reset --hard HEAD~1
+# Use case: "I want to completely discard my last commit and changes"
+
+# ===== Reset to a specific commit =====
+git reset --hard a1b2c3d
+
+# ===== Reset a single file to HEAD =====
+git checkout HEAD -- path/to/file.txt
+git restore path/to/file.txt   # modern syntax (Git 2.23+)
+
+# ===== Reset staging area (unstage everything) =====
+git reset
+
+# ===== Unstage a specific file =====
+git reset path/to/file.txt
+git restore --staged path/to/file.txt   # modern
+</code></pre>
+  </div>
+
+  <h3>git revert — undo ایمن</h3>
+  <p>برخلاف reset که تاریخچه را بازنویسی می‌کند، revert یک commit جدید می‌سازد که تغییرات commit قبلی را معکوس می‌کند. این روش برای branchهای اشتراکی ایمن است زیرا تاریخچه را تغییر نمی‌دهد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Revert a single commit (creates a new commit)
+git revert a1b2c3d
+# Opens editor with default message: "Revert: &lt;original message&gt;"
+
+# Revert without auto-commit (combine multiple reverts)
+git revert --no-commit a1b2c3d
+git revert --no-commit d4e5f6g
+git commit -m "Revert: remove broken auth changes"
+
+# Revert a range of commits
+git revert --no-commit HEAD~3..HEAD
+
+# Revert a merge commit
+git revert -m 1 a1b2c3d
+# -m 1 means: keep parent 1 (the branch you merged INTO)
+
+# Revert last commit but keep changes staged
+git revert -n HEAD
+
+# ===== Difference: reset vs revert =====
+# reset: rewrites history (use on local/personal branches)
+# revert: adds new commit that undoes (use on shared branches)
+
+# ===== Scenario: Bad commit already pushed to main =====
+# DON'T: git reset --hard HEAD~1 &amp;&amp; git push -f
+# DO:
+git revert HEAD
+git push
+</code></pre>
+  </div>
+
+  <div class="callout danger">
+    <div class="title">🚨 خطر reset --hard</div>
+    <p><code>git reset --hard</code> تغییرات uncommitted را برای همیشه پاک می‌کند (شامل staging area و working dir). فقط commitها از طریق reflog قابل بازیابی هستند. هرگز این دستور را وقتی تغییرات مهم uncommitted دارید، اجرا نکنید. اگر فقط می‌خواهید فایل‌ها را برگردانید، از <code>git restore</code> استفاده کنید.</p>
+  </div>
+
+  <h3>git checkout و git restore — بازیابی فایل‌ها</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Restore a file from latest commit (discard local changes)
+git checkout -- path/to/file.txt
+git restore path/to/file.txt          # modern (Git 2.23+)
+
+# Restore a file from a specific commit
+git checkout a1b2c3d -- path/to/file.txt
+git restore --source=a1b2c3d path/to/file.txt
+
+# Restore multiple files
+git restore file1.txt file2.txt
+
+# Restore all files in current directory
+git restore .
+
+# Restore staged changes (unstage)
+git restore --staged path/to/file.txt
+git restore --staged .
+
+# Restore a deleted file (not yet committed deletion)
+git restore path/to/deleted.txt
+
+# Restore a deleted file (committed deletion)
+git checkout HEAD~1 -- path/to/deleted.txt
+
+# ===== View a file from a specific commit without restoring =====
+git show a1b2c3d:path/to/file.txt
+</code></pre>
+  </div>
+
+  <h3>git clean — حذف فایل‌های untracked</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Show what would be deleted (dry run)
+git clean -n
+git clean --dry-run
+
+# Delete untracked files
+git clean -f
+
+# Delete untracked files and directories
+git clean -fd
+
+# Delete ignored files too (be careful!)
+git clean -fdx
+
+# Interactive clean
+git clean -i
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 17: Stash & Cherry-pick ============================ -->
+<section id="ch17" class="chapter">
+  <span class="chapter-label">Chapter 17</span>
+  <h2>Stash و Cherry-pick <a class="anchor-link" href="#ch17">#</a></h2>
+
+  <p>دو دستور پرکاربرد اما کمتر شناخته‌شده: <code>stash</code> برای موقتاً کنار گذاشتن تغییرات، و <code>cherry-pick</code> برای انتخاب یک commit از branch دیگر. هر دو در کار روزمره به شدت مفیدند.</p>
+
+  <h3>git stash — ذخیره موقت تغییرات</h3>
+  <p>وقتی روی چیزی کار می‌کنید و باید به یک branch دیگر switch کنید اما نمی‌خواهید commit ناقص بسازید، stash به کمک می‌آید. تغییرات شما در یک stack ذخیره می‌شود و بعداً می‌توانید برگردانید.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Stash all tracked changes (modified + staged)
+git stash
+git stash push -m "WIP: working on login form"
+
+# Stash including untracked files
+git stash -u
+git stash --include-untracked
+
+# Stash only staged changes (keep unstaged in working dir)
+git stash --keep-index
+
+# Stash a specific file
+git stash push -m "Just auth.js" -- path/to/auth.js
+
+# List all stashes
+git stash list
+# Output:
+# stash@{0}: On feature/login: WIP: working on login form
+# stash@{1}: On main: quick fix
+# stash@{2}: WIP on main: a1b2c3d Add README
+
+# Show what's in a stash
+git stash show stash@{0}
+git stash show -p stash@{0}    # full diff
+
+# Apply most recent stash (keeps it in stack)
+git stash apply
+
+# Apply a specific stash
+git stash apply stash@{2}
+
+# Apply and remove from stack (most common)
+git stash pop
+
+# Drop a stash
+git stash drop stash@{0}
+
+# Clear all stashes (DANGEROUS)
+git stash clear
+
+# Create a branch from a stash
+git stash branch new-branch stash@{0}
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ Stash Workflow رایج</div>
+    <p>۱) روی feature کار می‌کنید. ۲) باگ urgent روی main می‌آید. ۳) <code>git stash</code> کنید. ۴) به main بروید، hotfix branch بسازید، درست کنید، push کنید. ۵) به feature برگردید. ۶) <code>git stash pop</code> کنید. این روش از ساخت commitهای ناقص («WIP»، «temporary») جلوگیری می‌کند.</p>
+  </div>
+
+  <h3>git cherry-pick — انتقال یک commit</h3>
+  <p>cherry-pick یک commit خاص را از یک branch به branch فعلی اعمال می‌کند. برخلاف merge که کل تاریخچه را می‌آورد، cherry-pick فقط یک commit را. مفید برای: انتقال hotfix بین branchها، یا جدا کردن یک قابلیت از یک branch شلوغ.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Cherry-pick a single commit
+git cherry-pick a1b2c3d
+
+# Cherry-pick multiple commits
+git cherry-pick a1b2c3d d4e5f6g 7h8i9j0
+
+# Cherry-pick a range (exclusive of start)
+git cherry-pick a1b2c3d..d4e5f6g
+
+# Cherry-pick without committing (stage changes only)
+git cherry-pick --no-commit a1b2c3d
+git cherry-pick -n a1b2c3d
+
+# Cherry-pick and edit commit message
+git cherry-pick --edit a1b2c3d
+
+# Cherry-pick but keep original message format
+git cherry-pick -x a1b2c3d
+# Adds: (cherry picked from commit a1b2c3d...)
+
+# ===== Common scenario: hotfix from main to develop =====
+# A bug was fixed on main, need same fix on develop
+git switch develop
+git cherry-pick a1b2c3d   # the hotfix commit
+git push
+
+# ===== Resolve conflicts during cherry-pick =====
+git cherry-pick a1b2c3d
+# CONFLICT...
+# Resolve, then:
+git add .
+git cherry-pick --continue
+
+# Abort cherry-pick
+git cherry-pick --abort
+</code></pre>
+  </div>
+
+  <h3>git bisect — پیدا کردن commit مخرب</h3>
+  <p>وقتی یک باگ ظاهر شده و نمی‌دانید کدام commit آن را وارد کرده، bisect با binary search روی تاریخچه، commit مقصر را پیدا می‌کند.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Start bisect session
+git bisect start
+
+# Mark current commit as bad (has the bug)
+git bisect bad
+
+# Mark a known-good commit (e.g., from a month ago)
+git bisect good v1.0.0
+# or: git bisect good a1b2c3d
+
+# Git checks out a middle commit.
+# Test it, then mark as good or bad:
+git bisect good   # or git bisect bad
+
+# Continue until Git identifies the first bad commit
+# Output: "a1b2c3d is the first bad commit"
+
+# End bisect session (return to original branch)
+git bisect reset
+
+# ===== Automated bisect (with a test script) =====
+git bisect start
+git bisect bad HEAD
+git bisect good v1.0.0
+git bisect run npm test    # auto-runs tests until failure found
+git bisect reset
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ bisect کاربردی</div>
+    <p>اگر تستی دارید که با fail شدنش، باگ را شناسایی می‌کند، <code>git bisect run</code> کل فرآیند را خودکار می‌کند. حتی اگر ۱۰۰۰ commit قبل از current باشد، در ~۱۰ مرحله (log2(1000)) پیدا می‌شود. این یکی از بهترین ویژگی‌های Git برای debug است.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 18: Submodules & Worktrees ============================ -->
+<section id="ch18" class="chapter">
+  <span class="chapter-label">Chapter 18</span>
+  <h2>Submodules و Worktrees <a class="anchor-link" href="#ch18">#</a></h2>
+
+  <p>گاهی اوقات نیاز به ساختارهای پیشرفته‌تری داریم: پروژه‌ای که شامل پروژه‌ی دیگر است (submodule)، یا کار همزمان روی چند branch بدون نیاز به stash (worktree). در این فصل، هر دو را می‌بینیم.</p>
+
+  <h3>git submodule — repo در repo</h3>
+  <p>Submodule اجازه می‌دهد یک Git repo را درون repo دیگر قرار دهید. مفید برای: shared libraries، monorepoهای ترکیبی، یا وقتی می‌خواهید یک repo را در چندین پروژه استفاده کنید بدون اینکه کد را کپی کنید.</p>
+
+  <div class="diagram-wrap">
+    <div class="mermaid">
+graph TB
+    P["Parent Repo<br/>(your-project)"]
+    S1["Submodule: shared-lib<br/>(separate Git repo)"]
+    S2["Submodule: theme<br/>(separate Git repo)"]
+    P -->|.gitmodules| S1
+    P -->|.gitmodules| S2
+    style P fill:#c084fc,stroke:#1e1e2e,color:#1e1e2e
+    style S1 fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    style S2 fill:#2dd4bf,stroke:#1e1e2e,color:#1e1e2e
+    </div>
+    <div class="diagram-title">// Submodule: parent repo references specific commit of another repo</div>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># ===== Add a submodule =====
+git submodule add git@github.com:shared/lib.git libs/shared-lib
+git commit -m "Add shared-lib as submodule"
+
+# This creates:
+# 1. .gitmodules file (tracks submodule URL &amp; path)
+# 2. libs/shared-lib/ directory (the submodule content)
+# 3. A gitlink entry (pointer to specific commit in submodule)
+
+# ===== Clone a repo WITH its submodules =====
+git clone --recurse-submodules git@github.com:A-talebifard/project.git
+
+# If you forgot --recurse-submodules, initialize after clone:
+git submodule update --init --recursive
+
+# ===== Update all submodules to latest commit =====
+git submodule update --remote
+git add .
+git commit -m "Update submodules to latest"
+
+# ===== Update a specific submodule =====
+cd libs/shared-lib
+git switch main
+git pull
+cd ../..
+git add libs/shared-lib
+git commit -m "Update shared-lib to latest main"
+
+# ===== View submodule status =====
+git submodule status
+
+# ===== Make changes INSIDE a submodule =====
+cd libs/shared-lib
+# Make changes, commit, push as normal
+git add .
+git commit -m "Fix bug in shared-lib"
+git push origin main
+cd ../..
+git add libs/shared-lib
+git commit -m "Bump shared-lib to latest with bug fix"
+
+# ===== Remove a submodule =====
+git submodule deinit -f libs/shared-lib
+git rm -f libs/shared-lib
+git commit -m "Remove shared-lib submodule"
+</code></pre>
+  </div>
+
+  <div class="callout warn">
+    <div class="title">⚠️ چالش‌های Submodule</div>
+    <p>Submoduleها قدرتمندند اما چالش‌برانگیز: ۱) کاربران تازه‌کار یادشان می‌رود <code>--recurse-submodules</code> را اضافه کنند. ۲) Conflict در submodule references رایج است. ۳) CI باید submodules را init کند. ۴) اگر به submodules علاقه‌مندید، جایگزین‌های مدرن‌تر مثل <strong>Git Subtree</strong> یا <strong>monorepo tools</strong> (Nx، Turborepo، Lerna) را هم بررسی کنید.</p>
+  </div>
+
+  <h3>git worktree — کار همزمان روی چند branch</h3>
+  <p>worktree اجازه می‌دهد چند working directory برای همان repo داشته باشید. یعنی می‌توانید همزمان روی feature/login و main کار کنید بدون نیاز به stash یا clone جدید.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Create a new working tree for an existing branch
+git worktree add ../project-feature feature/login
+# Now you have:
+# /path/to/project          -&gt; main branch (original)
+# /path/to/project-feature  -&gt; feature/login (new worktree)
+
+# Create worktree with a NEW branch
+git worktree add -b feature/api ../project-api
+
+# List all worktrees
+git worktree list
+# Output:
+# /path/to/project          a1b2c3d [main]
+# /path/to/project-feature  d4e5f6g [feature/login]
+# /path/to/project-api      7h8i9j0 [feature/api]
+
+# Remove a worktree (just delete the directory)
+git worktree remove ../project-feature
+
+# Prune stale worktree entries
+git worktree prune
+
+# ===== Common use cases =====
+# 1. Working on a feature when a hotfix is needed:
+#    - Open new worktree on main, fix, push, remove worktree
+# 2. Running tests on one branch while coding on another
+# 3. Comparing two versions side by side in two editors
+</code></pre>
+  </div>
+
+  <h3>Partial Clone و Sparse-Checkout</h3>
+  <p>برای repoهای بزرگ، می‌توانید فقط تاریخچه‌ای که نیاز دارید دانلود کنید.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># ===== Partial clone: only download commits, fetch blobs on demand =====
+git clone --filter=blob:none git@github.com:large/repo.git
+# Faster clone, downloads file contents only when you read them
+
+# Even more aggressive: no blobs, no trees
+git clone --filter=tree:0 git@github.com:large/repo.git
+
+# ===== Sparse checkout: only check out specific directories =====
+git clone --no-checkout git@github.com:large/repo.git
+cd repo
+git sparse-checkout init --cone
+git sparse-checkout set src/components src/utils
+git checkout main
+# Now only src/components/ and src/utils/ are on disk
+
+# Add more directories later
+git sparse-checkout add docs
+
+# Disable sparse checkout
+git sparse-checkout disable
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 19: Hooks & Advanced Config ============================ -->
+<section id="ch19" class="chapter">
+  <span class="chapter-label">Chapter 19</span>
+  <h2>Hooks و تنظیمات پیشرفته <a class="anchor-link" href="#ch19">#</a></h2>
+
+  <p>Git Hooks اسکریپت‌هایی هستند که به‌طور خودکار قبل یا بعد از رویدادهای مهم (commit، push، receive) اجرا می‌شوند. با ترکیب hooks، .gitignore هوشمند و GPG signing، می‌توانید کیفیت کد و امنیت پروژه را به طور چشمگیری افزایش دهید.</p>
+
+  <h3>ساختار Hooks</h3>
+  <p>Hooks در <code>.git/hooks/</code> قرار دارند و به صورت پیش‌فرض sample هستند (با پسوند <code>.sample</code>). برای فعال‌سازی، پسوند را حذف کنید و فایل را executable کنید.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Hook</th><th>زمان اجرا</th><th>کاربرد رایج</th></tr></thead>
+      <tbody>
+        <tr><td><code>pre-commit</code></td><td>قبل از ساخت commit</td><td>Lint، format، block sensitive data</td></tr>
+        <tr><td><code>prepare-commit-msg</code></td><td>قبل از باز شدن editor پیام</td><td>افزودن issue number خودکار</td></tr>
+        <tr><td><code>commit-msg</code></td><td>بعد از نوشته شدن پیام</td><td>اعتبارسنجی فرمت پیام (Conventional Commits)</td></tr>
+        <tr><td><code>post-commit</code></td><td>بعد از کامل شدن commit</td><td>اعلان، backup</td></tr>
+        <tr><td><code>pre-push</code></td><td>قبل از push</td><td>اجرای تست، block push به main</td></tr>
+        <tr><td><code>pre-rebase</code></td><td>قبل از rebase</td><td>جلوگیری از rebase روی main</td></tr>
+        <tr><td><code>post-merge</code></td><td>بعد از merge</td><td>نصب خودکار dependencies</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>مثال: pre-commit hook</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash">#!/bin/bash
+# File: .git/hooks/pre-commit (make executable with: chmod +x)
+
+# Exit on any error
+set -e
+
+echo "▶ Running pre-commit checks..."
+
+# 1. Block commits with console.log in JS files
+if git diff --cached --name-only | grep -E "\.(js|ts|jsx|tsx)$"; then
+  FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E "\.(js|ts|jsx|tsx)$")
+  for FILE in $FILES; do
+    if grep -n "console\.log" "$FILE"; then
+      echo "❌ Found console.log in $FILE. Remove before committing."
+      exit 1
+    fi
+  done
+fi
+
+# 2. Block commits with TODO comments
+if git diff --cached | grep -E "^\+.*TODO"; then
+  echo "⚠️  Warning: commit contains TODO comments"
+  # exit 1   # uncomment to make this blocking
+fi
+
+# 3. Check for secrets (basic patterns)
+if git diff --cached | grep -iE "(api_key|password|secret)\s*=\s*['\"]"; then
+  echo "❌ Possible secret detected! Please review."
+  exit 1
+fi
+
+# 4. Run linter on staged files
+if [ -f "package.json" ]; then
+  npx lint-staged
+fi
+
+echo "✅ Pre-commit checks passed"
+exit 0
+</code></pre>
+  </div>
+
+  <h3>مثال: commit-msg hook (Conventional Commits)</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash">#!/bin/bash
+# File: .git/hooks/commit-msg
+# Ensures commit messages follow Conventional Commits format
+
+MSG_FILE="$1"
+MSG=$(cat "$MSG_FILE")
+
+# Regex: type(scope): description  or  type: description
+PATTERN="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9-]+\))?!?: .{1,80}$"
+
+# Skip merge commits
+if echo "$MSG" | grep -q "^Merge "; then
+  exit 0
+fi
+
+# Skip revert commits
+if echo "$MSG" | grep -q "^Revert "; then
+  exit 0
+fi
+
+# Check first line
+FIRST_LINE=$(echo "$MSG" | head -1)
+
+if ! echo "$FIRST_LINE" | grep -qE "$PATTERN"; then
+  echo "❌ Invalid commit message format!"
+  echo ""
+  echo "Expected: type(scope): description"
+  echo "Examples:"
+  echo "  feat(auth): add JWT login"
+  echo "  fix: handle null user"
+  echo "  docs: update README"
+  echo ""
+  echo "Got: $FIRST_LINE"
+  exit 1
+fi
+
+exit 0
+</code></pre>
+  </div>
+
+  <h3>حرفه‌ای: Husky + lint-staged</h3>
+  <p>برای پروژه‌های Node.js، ابزار <code>Husky</code> مدیریت hooks را در repo به اشتراک می‌گذارد (hooks پیش‌فرض در <code>.git/hooks</code> فقط محلی هستند).</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Install Husky
+npm install --save-dev husky lint-staged
+
+# Initialize Husky (creates .husky/ directory)
+npx husky init
+
+# Add pre-commit hook
+echo "npx lint-staged" > .husky/pre-commit
+
+# Configure lint-staged in package.json
+# This runs specific commands on staged files only
+</code></pre>
+  </div>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">json</span></div>
+<pre><code class="language-json">{
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{md,json,yaml}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
+</code></pre>
+  </div>
+
+  <h3>.gitignore — نادیده گرفتن فایل‌ها</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">gitignore</span></div>
+<pre><code class="language-gitignore"># ===== A comprehensive .gitignore =====
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Environment variables (NEVER commit!)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Secrets
+secrets.json
+*.pem
+*.key
+!public.key
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+.tmp/
+tmp/
+
+# Negation: include a file that would be ignored
+!tests/fixtures/.env
+</code></pre>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ gitignore.io</div>
+    <p>برای شروع سریع، به <a href="https://gitignore.io" target="_blank">gitignore.io</a> بروید، زبان/فریم‌ورک/OS خود را وارد کنید و یک .gitignore کامل دریافت کنید. GitHub هم در <a href="https://github.com/github/gitignore" target="_blank">github/gitignore</a> تمپلیت‌های رسمی برای هر زبان دارد.</p>
+  </div>
+
+  <h3>global .gitignore</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Create a global gitignore for OS/IDE files
+echo "# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp" > ~/.gitignore_global
+
+# Tell Git to use it
+git config --global core.excludesfile ~/.gitignore_global
+
+# Now you don't need to add these to every project's .gitignore
+</code></pre>
+  </div>
+
+  <h3>GPG Signing — امضای commits</h3>
+  <p>GPG signing به commits شما امضای دیجیتال اضافه می‌کند تا قابل تأیید باشد که واقعاً شما آن را ساخته‌اید. GitHub commits امضاشده را با علامت "Verified" نشان می‌دهد.</p>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Generate GPG key
+gpg --full-generate-key
+# Choose: (1) RSA and RSA
+# Key size: 4096
+# Validity: 1y (or 0 for no expiry)
+# Real name: Abbas Talebifard
+# Email: abbas@example.com (same as GitHub)
+
+# Step 2: List GPG keys
+gpg --list-secret-keys --keyid-format=long
+# Output:
+# sec   rsa4096/ABC123DEF456 2024-01-01 [SC]
+# Copy the KEY_ID (after the /): ABC123DEF456
+
+# Step 3: Export public key
+gpg --armor --export ABC123DEF456
+# Copy the entire output (-----BEGIN PGP PUBLIC KEY BLOCK----- ...)
+
+# Step 4: Add to GitHub → Settings → SSH and GPG keys → New GPG key
+
+# Step 5: Configure Git to use GPG
+git config --global user.signingkey ABC123DEF456
+git config --global commit.gpgsign true   # sign all commits by default
+
+# Step 6: Sign a commit
+git commit -S -m "Signed commit"
+
+# Sign a tag
+git tag -s v1.0.0 -m "Signed release v1.0.0"
+
+# Verify a signature
+git verify-commit HEAD
+git tag -v v1.0.0
+</code></pre>
+  </div>
+
+  <h3>.gitattributes</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">gitattributes</span></div>
+<pre><code class="language-gitattributes"># .gitattributes - per-file settings
+
+# Normalize line endings (auto-convert on checkout/commit)
+* text=auto
+
+# Specific file types
+*.txt text
+*.jpg binary
+*.png binary
+*.pdf binary
+
+# Force LF for shell scripts
+*.sh text eol=lf
+
+# Force CRLF for Windows batch files
+*.bat text eol=crlf
+
+# Mark generated files as linguist-vendored (excluded from GitHub stats)
+docs/*.md linguist-vendored
+minified/*.js linguist-generated=true
+
+# Diff settings
+*.md diff=markdown
+*.json diff=json
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 20: Troubleshooting ============================ -->
+<section id="ch20" class="chapter">
+  <span class="chapter-label">Chapter 20</span>
+  <h2>Troubleshooting — حل مشکلات رایج <a class="anchor-link" href="#ch20">#</a></h2>
+
+  <p>حتی بهترین توسعه‌دهندگان هم به مشکل می‌خورند. این فصل، رایج‌ترین مشکلات Git و راه‌حل آن‌ها را پوشش می‌دهد. هر مشکل با سناریوی واقعی و دستورات بازیابی نشان داده شده است.</p>
+
+  <h3>مشکل ۱: «یک commit را گم کردم!»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Scenario: Did git reset --hard, lost my work!
+
+# Step 1: Check reflog (record of every HEAD movement)
+git reflog
+# Output:
+# a1b2c3d HEAD@{0}: reset: moving to HEAD~1
+# d4e5f6g HEAD@{1}: commit: My important work  ← this is what you want!
+
+# Step 2: Recover by resetting to that commit
+git reset --hard d4e5f6g
+
+# Or cherry-pick just that commit
+git cherry-pick d4e5f6g
+</code></pre>
+  </div>
+
+  <h3>مشکل ۲: «در حالت Detached HEAD هستم»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Scenario: Checked out a commit (not a branch), now commits go nowhere
+
+# Symptoms:
+# "You are in 'detached HEAD' state..."
+
+# Solution 1: Create a new branch from current position
+git switch -c new-branch-name
+
+# Solution 2: If you already made commits, save them first
+git branch temp-branch        # mark current position
+git switch main
+git merge temp-branch         # bring commits to main
+git branch -d temp-branch
+
+# Solution 3: If you don't want those commits
+git switch main               # return to main, commits are "lost" but in reflog
+</code></pre>
+  </div>
+
+  <h3>مشکل ۳: «push رد می‌شود (non-fast-forward)»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Error: "Updates were rejected because the remote contains work
+# that you do not have locally"
+
+# Cause: Someone else pushed to the same branch
+
+# Solution 1: Pull first, then push
+git pull --rebase origin main    # rebase your commits on top of remote
+git push
+
+# Solution 2: If you want to merge instead of rebase
+git pull origin main
+# (this creates a merge commit)
+git push
+
+# Solution 3: Force push (ONLY for personal branches!)
+git push --force-with-lease
+</code></pre>
+  </div>
+
+  <h3>مشکل ۴: «فایل در .gitignore است اما هنوز track می‌شود»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Cause: .gitignore only affects untracked files.
+# If a file was already tracked, adding to .gitignore doesn't remove it.
+
+# Solution: Remove from tracking but keep on disk
+git rm --cached path/to/file    # for a single file
+git rm -r --cached path/to/dir  # for a directory
+
+# Then commit
+git commit -m "Stop tracking file (now in .gitignore)"
+
+# ===== Remove all files that should be ignored =====
+git rm -r --cached .
+git add .
+git commit -m "Apply .gitignore to all files"
+</code></pre>
+  </div>
+
+  <h3>مشکل ۵: «فایل‌های حساس را commit کردم!»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Scenario: Committed .env with API keys!
+
+# Step 1: If recent commit (not pushed yet)
+git rm --cached .env
+echo ".env" >> .gitignore
+git add .gitignore
+git commit --amend --no-edit
+
+# Step 2: If already pushed (BAD! keys are exposed)
+# - IMMEDIATELY rotate/revoke the exposed keys
+# - Then clean history with BFG Repo-Cleaner or git-filter-repo
+
+# Using git-filter-repo (modern, recommended):
+pip install git-filter-repo
+git filter-repo --path .env --invert-paths
+
+# Force push rewritten history
+git push --force --all
+git push --force --tags
+
+# Step 3: Notify collaborators - they need to re-clone
+</code></pre>
+  </div>
+
+  <div class="callout danger">
+    <div class="title">🚨 نشت اطلاعات حساس</div>
+    <p>اگر secretها (API keys، passwords، private keys) را به GitHub push کرده‌اید، <strong>قبل از هر چیز</strong> آن‌ها را revoke و جدید بسازید. پاک کردن history هیچ فایده‌ای ندارد اگر کسی قبلاً clone کرده باشد. GitHub حتی اگر history را rewrite کنید، forkها و cacheها همچنان secret را دارند.</p>
+  </div>
+
+  <h3>مشکل ۶: «repo خیلی بزرگ شده»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Step 1: Check what's taking space
+git count-objects -vH
+
+# Step 2: See largest files in history
+git rev-list --objects --all | \
+  git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
+  awk '/^blob/ {print substr($0,6)}' | \
+  sort -k2 -n -r | head -20
+
+# Step 3: Run garbage collection
+git gc --aggressive --prune=now
+
+# Step 4: For large files in history, use BFG Repo-Cleaner
+# Download from: https://rtyley.github.io/bfg-repo-cleaner/
+java -jar bfg.jar --strip-blobs-bigger-than 50M my-repo.git
+cd my-repo.git
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+
+# Step 5: Consider Git LFS for large binary files going forward
+git lfs install
+git lfs track "*.psd" "*.mp4" "*.zip"
+git add .gitattributes
+</code></pre>
+  </div>
+
+  <h3>مشکل ۷: «merge را خراب کردم»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># Scenario: Started merge but conflicts are too complex
+
+# Abort the merge (return to pre-merge state)
+git merge --abort
+
+# If you already committed the merge:
+git reset --hard ORIG_HEAD
+# ORIG_HEAD points to where you were before the merge
+
+# For rebase:
+git rebase --abort
+</code></pre>
+  </div>
+
+  <h3>مشکل ۸: «اسم/ایمیل اشتباه در commits قبلی»</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">bash</span></div>
+<pre><code class="language-bash"># For future commits: update config
+git config --global user.name "Correct Name"
+git config --global user.email "correct@example.com"
+
+# For past commits (last N commits), use interactive rebase:
+git rebase -i HEAD~5
+# Mark commits as "edit", then for each:
+git commit --amend --author="Correct Name &lt;correct@example.com&gt;"
+git rebase --continue
+
+# For ALL commits in repo (DANGEROUS, rewrites entire history):
+git filter-repo --commit-callback '
+    commit.author_email = b"correct@example.com"
+    commit.author_name = b"Correct Name"
+    commit.committer_email = b"correct@example.com"
+    commit.committer_name = b"Correct Name"
+'
+
+# Force push
+git push --force --all
+</code></pre>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 21: Best Practices ============================ -->
+<section id="ch21" class="chapter">
+  <span class="chapter-label">Chapter 21</span>
+  <h2>Best Practices و Markdown <a class="anchor-link" href="#ch21">#</a></h2>
+
+  <p>این فصل، مجموعه‌ای از بهترین روش‌ها برای کار با Git و GitHub را ارائه می‌دهد؛ از کیفیت commitها تا طراحی پروژه‌های متن‌باز. رعایت این اصول، تفاوت بین یک کاربر آماتور و یک توسعه‌دهنده‌ی حرفه‌ای است.</p>
+
+  <h3>قوانین commit messages</h3>
+  <ul>
+    <li><strong>خط اول:</strong> حداکثر ۵۰ کاراکتر، در زمان حال، با حرف بزرگ.</li>
+    <li><strong>خط دوم:</strong> خالی.</li>
+    <li><strong>خط سوم به بعد:</strong> توضیحات با حداکثر ۷۲ کاراکتر در هر خط.</li>
+    <li><strong>از Conventional Commits استفاده کنید:</strong> <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>refactor</code>, <code>test</code>, <code>chore</code>.</li>
+    <li><strong>به جای «what»، «why» را توضیح دهید:</strong> کد خودش می‌گوید چه شده، پیام باید بگوید چرا.</li>
+  </ul>
+
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">text</span></div>
+<pre><code class="language-text">// ❌ Bad commit messages:
+- "fix"
+- "update"
+- "wip"
+- "fixed the bug"
+- "asdf"
+- "Changes from meeting"
+
+// ✅ Good commit messages:
+- "fix(auth): handle expired JWT tokens gracefully"
+- "feat(api): add /users endpoint with pagination"
+- "docs: add installation instructions for Windows"
+- "refactor(auth): extract token validation to middleware"
+
+// ✅ With body:
+feat(auth): add OAuth2 login with Google
+
+- Add /api/auth/google endpoint
+- Implement OAuth2 callback handler
+- Store refresh tokens in database
+- Add middleware to validate OAuth sessions
+
+Resolves: #42
+Breaking change: removes old /api/login endpoint
+</code></pre>
+  </div>
+
+  <h3>قوانین branch</h3>
+  <ul>
+    <li><strong>نام‌گذاری معنادار:</strong> <code>feature/add-jwt-auth</code> به جای <code>my-changes</code>.</li>
+    <li><strong>کوتاه‌مدت نگه دارید:</strong> هرچه طولانی‌تر، احتمال conflict بیشتر.</li>
+    <li><strong>یک feature per branch:</strong> مخلوط کردن چند قابلیت، review را سخت می‌کند.</li>
+    <li><strong>قبل از merge، rebase روی main:</strong> تاریخچه‌ی تمیز و آخرین تغییرات.</li>
+    <li><strong>بعد از merge، حذف کنید:</strong> branchهای قدیمی شلوغ می‌کنند.</li>
+  </ul>
+
+  <h3>قوانین PR</h3>
+  <ul>
+    <li><strong>کوچک نگه دارید:</strong> حداکثر ۴۰۰ خط تغییر، review ساده‌تر.</li>
+    <li><strong>توضیح واضح:</strong> چرا، چه چیزی، چطور.</li>
+    <li><strong>خود-review کنید:</strong> قبل از assign به دیگران.</li>
+    <li><strong>آزمایش‌ها را به‌روز کنید:</strong> پوشش کد نباید افت کند.</li>
+    <li><strong>صبور باشید:</strong> review زمان می‌برد؛ فشار نیاورید.</li>
+  </ul>
+
+  <h3>Markdown — راهنمای سریع</h3>
+  <div class="code-wrap">
+    <div class="code-header"><span class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></span><span class="lang">markdown</span></div>
+<pre><code class="language-markdown"># H1 Heading
+## H2 Heading
+### H3 Heading
+
+**Bold text**
+*Italic text*
+~~Strikethrough~~
+`inline code`
+
+[Link text](https://example.com)
+![Alt text](image.png)
+
+- Unordered list item
+- Another item
+  - Nested item
+
+1. Ordered list
+2. Second item
+3. Third item
+
+&gt; Blockquote
+&gt; More quote
+
+```javascript
+// Code block with syntax highlighting
+function hello() {
+  console.log("Hello");
+}
+```
+
+| Column 1 | Column 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+
+---
+
+Horizontal rule above
+
+- [x] Task list (completed)
+- [ ] Task list (pending)
+
+&lt;details&gt;
+&lt;summary&gt;Click to expand&lt;/summary&gt;
+Hidden content here
+&lt;/details&gt;
+
+&lt;!-- HTML comment --&gt;
+
+Footnote[^1]
+
+[^1]: Footnote definition
+
+## GitHub Flavored Markdown (GFM)
+- @mentions (notify users)
+- #123 (link to issue/PR)
+- emoji :smile: :rocket: :+1:
+- SHA references (a1b2c3d)
+</code></pre>
+  </div>
+
+  <h3>کانال‌های ارتباطی پروژه‌های Open Source</h3>
+  <p>یک پروژه‌ی متن‌باز خوب، این فایل‌ها را دارد:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>فایل</th><th>هدف</th></tr></thead>
+      <tbody>
+        <tr><td><code>README.md</code></td><td>معرفی، نصب، استفاده</td></tr>
+        <tr><td><code>CONTRIBUTING.md</code></td><td>چطور مشارکت کنیم</td></tr>
+        <tr><td><code>CODE_OF_CONDUCT.md</code></td><td>قوانین رفتار جامعه</td></tr>
+        <tr><td><code>LICENSE</code></td><td>لیسانس قانونی</td></tr>
+        <tr><td><code>CHANGELOG.md</code></td><td>تاریخچه‌ی تغییرات</td></tr>
+        <tr><td><code>SECURITY.md</code></td><td>گزارش آسیب‌پذیری‌ها</td></tr>
+        <tr><td><code>.github/ISSUE_TEMPLATE/</code></td><td>تمپلیت issue</td></tr>
+        <tr><td><code>.github/PULL_REQUEST_TEMPLATE.md</code></td><td>تمپلیت PR</td></tr>
+        <tr><td><code>.github/FUNDING.yml</code></td><td>دکمه Sponsor</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>لیسانس‌های رایج</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>لیسانس</th><th>اجازه商用</th><th>تغییر لازم</th><th>محبوبیت</th></tr></thead>
+      <tbody>
+        <tr><td><strong>MIT</strong></td><td>✅</td><td>✅ (اعتبار)</td><td>بسیار زیاد</td></tr>
+        <tr><td><strong>Apache 2.0</strong></td><td>✅</td><td>✅ + patent grant</td><td>زیاد</td></tr>
+        <tr><td><strong>BSD 3-Clause</strong></td><td>✅</td><td>✅</td><td>متوسط</td></tr>
+        <tr><td><strong>GPL v3</strong></td><td>✅</td><td>❌ باید GPL بماند</td><td>متوسط</td></tr>
+        <tr><td><strong>AGPL v3</strong></td><td>✅</td><td>❌ برای SaaS هم</td><td>کم</td></tr>
+        <tr><td><strong>Unlicense</strong></td><td>✅</td><td>❌</td><td>کم</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout tip">
+    <div class="title">✅ انتخاب لایسنس</div>
+    <p>برای اکثر پروژه‌ها <strong>MIT</strong> بهترین انتخاب است: ساده، مجاز به همه‌چیز، فقط اعتبار لازم. اگر نگران patent هستید، <strong>Apache 2.0</strong>. اگر می‌خواهید derivativeها هم open source بمانند، <strong>GPL v3</strong>. از سایت <a href="https://choosealicense.com" target="_blank">choosealicense.com</a> کمک بگیرید.</p>
+  </div>
+</section>
+
+<!-- ============================ CHAPTER 22: Cheat Sheet ============================ -->
+<section id="ch22" class="chapter">
+  <span class="chapter-label">Chapter 22</span>
+  <h2>Cheat Sheet کامل <a class="anchor-link" href="#ch22">#</a></h2>
+
+  <p>این فصل، یک مرجع سریع برای تمام دستورات مهم Git است. برای دسترسی سریع در حین کار طراحی شده است. هر دستور با توضیح کوتاه و مثال آمده است.</p>
+
+  <h3>Setup &amp; Config</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git config --global user.name "Name"</code></td><td>تنظیم نام</td></tr>
+        <tr><td><code>git config --global user.email "email"</code></td><td>تنظیم ایمیل</td></tr>
+        <tr><td><code>git config --global init.defaultBranch main</code></td><td>branch پیش‌فرض</td></tr>
+        <tr><td><code>git config --global core.editor "code --wait"</code></td><td>ادیتور پیش‌فرض</td></tr>
+        <tr><td><code>git config --global pull.rebase true</code></td><td>pull با rebase</td></tr>
+        <tr><td><code>git config --list</code></td><td>نمایش تنظیمات</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Repository Operations</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git init</code></td><td>ساخت repo جدید</td></tr>
+        <tr><td><code>git clone &lt;url&gt;</code></td><td>کپی از remote</td></tr>
+        <tr><td><code>git clone --depth 1 &lt;url&gt;</code></td><td>shallow clone</td></tr>
+        <tr><td><code>git clone --recurse-submodules &lt;url&gt;</code></td><td>با submodules</td></tr>
+        <tr><td><code>git status</code></td><td>وضعیت فعلی</td></tr>
+        <tr><td><code>git status -s</code></td><td>وضعیت کوتاه</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Staging &amp; Committing</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git add &lt;file&gt;</code></td><td>stage یک فایل</td></tr>
+        <tr><td><code>git add .</code></td><td>stage همه</td></tr>
+        <tr><td><code>git add -p</code></td><td>stage تعاملی</td></tr>
+        <tr><td><code>git add -u</code></td><td>stage فقط modifiedها</td></tr>
+        <tr><td><code>git commit -m "msg"</code></td><td>commit</td></tr>
+        <tr><td><code>git commit -am "msg"</code></td><td>stage + commit tracked</td></tr>
+        <tr><td><code>git commit --amend</code></td><td>اصلاح آخرین commit</td></tr>
+        <tr><td><code>git commit --amend --no-edit</code></td><td>اضافه تغییر بدون تغییر پیام</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Branching &amp; Merging</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git branch</code></td><td>لیست branchها</td></tr>
+        <tr><td><code>git branch &lt;name&gt;</code></td><td>ساخت branch</td></tr>
+        <tr><td><code>git switch &lt;name&gt;</code></td><td>تعویض branch</td></tr>
+        <tr><td><code>git switch -c &lt;name&gt;</code></td><td>ساخت + تعویض</td></tr>
+        <tr><td><code>git branch -d &lt;name&gt;</code></td><td>حذف branch (safe)</td></tr>
+        <tr><td><code>git branch -D &lt;name&gt;</code></td><td>حذف branch (force)</td></tr>
+        <tr><td><code>git merge &lt;branch&gt;</code></td><td>merge</td></tr>
+        <tr><td><code>git merge --no-ff &lt;branch&gt;</code></td><td>merge با merge commit</td></tr>
+        <tr><td><code>git merge --squash &lt;branch&gt;</code></td><td>squash merge</td></tr>
+        <tr><td><code>git merge --abort</code></td><td>لغو merge</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Rebasing</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git rebase &lt;branch&gt;</code></td><td>rebase روی branch</td></tr>
+        <tr><td><code>git rebase -i HEAD~N</code></td><td>rebase تعاملی</td></tr>
+        <tr><td><code>git rebase --continue</code></td><td>ادامه rebase</td></tr>
+        <tr><td><code>git rebase --abort</code></td><td>لغو rebase</td></tr>
+        <tr><td><code>git rebase --skip</code></td><td>رد کردن commit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Remote Operations</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git remote -v</code></td><td>لیست remoteها</td></tr>
+        <tr><td><code>git remote add &lt;name&gt; &lt;url&gt;</code></td><td>افزودن remote</td></tr>
+        <tr><td><code>git remote remove &lt;name&gt;</code></td><td>حذف remote</td></tr>
+        <tr><td><code>git fetch &lt;remote&gt;</code></td><td>دریافت بدون merge</td></tr>
+        <tr><td><code>git pull</code></td><td>fetch + merge</td></tr>
+        <tr><td><code>git pull --rebase</code></td><td>fetch + rebase</td></tr>
+        <tr><td><code>git push</code></td><td>ارسال به remote</td></tr>
+        <tr><td><code>git push -u origin &lt;branch&gt;</code></td><td>push + set upstream</td></tr>
+        <tr><td><code>git push --force-with-lease</code></td><td>force push امن</td></tr>
+        <tr><td><code>git push origin --delete &lt;branch&gt;</code></td><td>حذف remote branch</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Undo &amp; Recovery</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git reset --soft HEAD~1</code></td><td>undo commit، keep staged</td></tr>
+        <tr><td><code>git reset --mixed HEAD~1</code></td><td>undo commit + unstage (default)</td></tr>
+        <tr><td><code>git reset --hard HEAD~1</code></td><td>undo commit + discard</td></tr>
+        <tr><td><code>git revert &lt;commit&gt;</code></td><td>ساخت commit معکوس</td></tr>
+        <tr><td><code>git restore &lt;file&gt;</code></td><td>بازگرداندن فایل</td></tr>
+        <tr><td><code>git restore --staged &lt;file&gt;</code></td><td>unstage</td></tr>
+        <tr><td><code>git reflog</code></td><td>تاریخچه‌ی HEAD</td></tr>
+        <tr><td><code>git clean -fd</code></td><td>حذف untracked</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Stash &amp; Cherry-pick</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git stash</code></td><td>ذخیره موقت</td></tr>
+        <tr><td><code>git stash -u</code></td><td>شامل untracked</td></tr>
+        <tr><td><code>git stash list</code></td><td>لیست stashها</td></tr>
+        <tr><td><code>git stash pop</code></td><td>apply + drop</td></tr>
+        <tr><td><code>git stash apply</code></td><td>apply (keep in stack)</td></tr>
+        <tr><td><code>git cherry-pick &lt;sha&gt;</code></td><td>انتقال یک commit</td></tr>
+        <tr><td><code>git cherry-pick --abort</code></td><td>لغو cherry-pick</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Inspection &amp; Diff</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git log</code></td><td>تاریخچه</td></tr>
+        <tr><td><code>git log --oneline --graph</code></td><td>گراف فشرده</td></tr>
+        <tr><td><code>git log -p</code></td><td>log با diff</td></tr>
+        <tr><td><code>git log --author="name"</code></td><td>فیلتر بر اساس نویسنده</td></tr>
+        <tr><td><code>git diff</code></td><td>تفاوت unstaged</td></tr>
+        <tr><td><code>git diff --staged</code></td><td>تفاوت staged</td></tr>
+        <tr><td><code>git diff HEAD</code></td><td>تفاوت با آخرین commit</td></tr>
+        <tr><td><code>git show &lt;sha&gt;</code></td><td>نمایش یک commit</td></tr>
+        <tr><td><code>git blame &lt;file&gt;</code></td><td>آخرین تغییر هر خط</td></tr>
+        <tr><td><code>git bisect</code></td><td>binary search برای باگ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Tags &amp; Releases</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>git tag v1.0.0</code></td><td>tag سبک</td></tr>
+        <tr><td><code>git tag -a v1.0.0 -m "msg"</code></td><td>annotated tag</td></tr>
+        <tr><td><code>git tag -s v1.0.0 -m "msg"</code></td><td>signed tag</td></tr>
+        <tr><td><code>git tag</code></td><td>لیست tags</td></tr>
+        <tr><td><code>git push origin v1.0.0</code></td><td>push یک tag</td></tr>
+        <tr><td><code>git push --tags</code></td><td>push همه tags</td></tr>
+        <tr><td><code>git tag -d v1.0.0</code></td><td>حذف tag محلی</td></tr>
+        <tr><td><code>git checkout v1.0.0</code></td><td>checkout یک tag</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>GitHub CLI (gh)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>دستور</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><code>gh auth login</code></td><td>ورود به GitHub</td></tr>
+        <tr><td><code>gh repo clone &lt;owner&gt;/&lt;repo&gt;</code></td><td>clone</td></tr>
+        <tr><td><code>gh repo fork &lt;owner&gt;/&lt;repo&gt;</code></td><td>fork</td></tr>
+        <tr><td><code>gh repo create &lt;name&gt; --public</code></td><td>ساخت repo</td></tr>
+        <tr><td><code>gh pr create</code></td><td>ساخت PR</td></tr>
+        <tr><td><code>gh pr list</code></td><td>لیست PRها</td></tr>
+        <tr><td><code>gh pr checkout &lt;num&gt;</code></td><td>checkout PR</td></tr>
+        <tr><td><code>gh pr merge &lt;num&gt; --squash</code></td><td>merge PR</td></tr>
+        <tr><td><code>gh issue create</code></td><td>ساخت issue</td></tr>
+        <tr><td><code>gh issue list</code></td><td>لیست issueها</td></tr>
+        <tr><td><code>gh workflow run</code></td><td>اجرای workflow</td></tr>
+        <tr><td><code>gh run list</code></td><td>لیست runها</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout note">
+    <div class="title">💡 میانبرهای صفحه‌کلید</div>
+    <p>این کتاب از <kbd>Ctrl</kbd>+<kbd>K</kbd> برای جستجو، <kbd>Esc</kbd> برای بستن جستجو، و <kbd>→</kbd>/<kbd>←</kbd> برای ناوبری بین فصل‌ها پشتیبانی می‌کند. برای کپی کردن کد، روی دکمه‌ی <code>Copy</code> در بالای هر باکس کد کلیک کنید.</p>
+  </div>
+</section>
+
+<!-- ============================ GLOSSARY ============================ -->
+<section id="glossary" class="chapter">
+  <span class="chapter-label">Glossary</span>
+  <h2>واژه‌نامه <a class="anchor-link" href="#glossary">#</a></h2>
+
+  <p>اصطلاحات تخصصی Git و GitHub با توضیح کوتاه برای مرجع سریع.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>اصطلاح</th><th>توضیح</th></tr></thead>
+      <tbody>
+        <tr><td><strong>HEAD</strong></td><td>اشاره‌گر به commit فعلی روی branch جاری</td></tr>
+        <tr><td><strong>ORIG_HEAD</strong></td><td>موقعیت HEAD قبل از آخرین عملیات بزرگ (merge، reset)</td></tr>
+        <tr><td><strong>MERGE_HEAD</strong></td><td>commit ای که در حال merge شدن به HEAD است</td></tr>
+        <tr><td><strong>FETCH_HEAD</strong></td><td>نتیجه‌ی آخرین fetch</td></tr>
+        <tr><td><strong>origin</strong></td><td>نام پیش‌فرض remote repository</td></tr>
+        <tr><td><strong>upstream</strong></td><td>remote ای که از آن fork کرده‌اید</td></tr>
+        <tr><td><strong>main</strong></td><td>نام پیش‌فرض branch اصلی (به جای master)</td></tr>
+        <tr><td><strong>master</strong></td><td>نام قدیمی branch اصلی (تا ۲۰۲۰)</td></tr>
+        <tr><td><strong>fast-forward</strong></td><td>merge ای که فقط pointer را جلو می‌برد، بدون merge commit</td></tr>
+        <tr><td><strong>three-way merge</strong></td><td>merge با ساختن commit جدید با دو والد</td></tr>
+        <tr><td><strong>detached HEAD</strong></td><td>وقتی HEAD به commit خاصی اشاره می‌کند، نه به branch</td></tr>
+        <tr><td><strong>working directory</strong></td><td>فایل‌های روی دیسک که شما ویرایش می‌کنید</td></tr>
+        <tr><td><strong>staging area (index)</strong></td><td>منطقه‌ی بین working dir و repository برای آماده‌سازی commit</td></tr>
+        <tr><td><strong>blob</strong></td><td>object ذخیره‌ی محتوای فایل در Git</td></tr>
+        <tr><td><strong>tree</strong></td><td>object ذخیره‌ی ساختار دایرکتوری</td></tr>
+        <tr><td><strong>commit</strong></td><td>snapshot از staged files + metadata (author، message، parent)</td></tr>
+        <tr><td><strong>ref</strong></td><td>نام قابل خواندن که به SHA یک commit اشاره می‌کند (branch، tag)</td></tr>
+        <tr><td><strong>reflog</strong></td><td>تاریخچه‌ی محلی حرکات HEAD (برای recovery)</td></tr>
+        <tr><td><strong>shallow clone</strong></td><td>clone فقط با آخرین commit (با <code>--depth</code>)</td></tr>
+        <tr><td><strong>shallow clone</strong></td><td>clone فقط با آخرین commit (با <code>--depth</code>)</td></tr>
+        <tr><td><strong>fork</strong></td><td>کپی server-side از repo روی حساب شما</td></tr>
+        <tr><td><strong>clone</strong></td><td>کپی local از repo روی دیسک شما</td></tr>
+        <tr><td><strong>Pull Request (PR)</strong></td><td>درخواست merge از یک branch به دیگر</td></tr>
+        <tr><td><strong>issue</strong></td><td>گزارش باگ یا درخواست قابلیت در GitHub</td></tr>
+        <tr><td><strong>milestone</strong></td><td>گروهی از issues/PRs برای یک هدف</td></tr>
+        <tr><td><strong>label</strong></td><td>برچسب برای دسته‌بندی issue/PR</td></tr>
+        <tr><td><strong>Actions</strong></td><td>پلتفرم CI/CD داخلی GitHub</td></tr>
+        <tr><td><strong>workflow</strong></td><td>یک فایل YAML در <code>.github/workflows/</code></td></tr>
+        <tr><td><strong>runner</strong></td><td>ماشینی که workflow روی آن اجرا می‌شود</td></tr>
+        <tr><td><strong>Pages</strong></td><td>هاستینگ استاتیک رایگان GitHub</td></tr>
+        <tr><td><strong>LFS</strong></td><td>Large File Storage، برای ذخیره‌ی فایل‌های بزرگ</td></tr>
+        <tr><td><strong>submodule</strong></td><td>repo داخل repo (reference به commit خاص)</td></tr>
+        <tr><td><strong>worktree</strong></td><td>working directory اضافی برای همان repo</td></tr>
+        <tr><td><strong>squash</strong></td><td>ترکیب چند commit در یکی</td></tr>
+        <tr><td><strong>cherry-pick</strong></td><td>اعمال یک commit خاص از branch دیگر</td></tr>
+        <tr><td><strong>bisect</strong></td><td>binary search برای پیدا کردن commit مخرب</td></tr>
+        <tr><td><strong>blame</strong></td><td>مشاهده‌ی اینکه کدام commit هر خط را تغییر داده</td></tr>
+        <tr><td><strong>hook</strong></td><td>اسکریپتی که قبل/بعد از یک رویداد Git اجرا می‌شود</td></tr>
+        <tr><td><strong>Conventional Commits</strong></td><td>استاندارد پیام commit: <code>type(scope): description</code></td></tr>
+        <tr><td><strong>GPG signing</strong></td><td>امضای دیجیتال commits برای تأیید هویت</td></tr>
+        <tr><td><strong>PAT</strong></td><td>Personal Access Token، جایگزین پسورد HTTPS</td></tr>
+        <tr><td><strong>SSH key</strong></td><td>کلید عمومی/خصوصی برای auth بدون پسورد</td></tr>
+        <tr><td><strong>Git Flow</strong></td><td>استراتژی branching با ۶ نوع branch</td></tr>
+        <tr><td><strong>GitHub Flow</strong></td><td>استراتژی ساده با main + feature</td></tr>
+        <tr><td><strong>Trunk-Based</strong></td><td>استراتژی با branchهای کوتاه‌مدت</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<section id="footer" class="chapter">
+  <div id="footer-inner">
+    <img src="img/avatar.jpg" class="footer-avatar" alt="A-Talebifard">
+    <h3>A-Talebifard</h3>
+    <p class="footer-role">Software Developer · Open Source Enthusiast</p>
+
+    <div class="footer-links">
+      <a href="https://github.com/A-talebifard" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/abbastalebifard/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="copyright">
+      <p>© ۱۴۰۴ — A-Talebifard. تمام حقوق محفوظ است.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<script src="js/book.js"></script>
+</body>
+</html>
