@@ -243,3 +243,16 @@
       document.getElementById(chapters[currentIdx - 1].id)?.scrollIntoView({behavior:'smooth'});
     }
   });
+  // ===== PWA Install Prompt =====
+  let deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Optional: show a subtle install button if you want
+    console.log('PWA install available');
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    console.log('PWA installed');
+  });

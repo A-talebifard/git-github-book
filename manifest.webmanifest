@@ -1,0 +1,23 @@
+{
+  "name": "کتاب جامع Git و GitHub",
+  "short_name": "Git Book",
+  "description": "مرجع کامل فارسی آموزش Git و GitHub از مبتدی تا پیشرفته — کاملاً آفلاین و قابل نصب",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1e1e2e",
+  "theme_color": "#1e1e2e",
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["education", "books", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%231e1e2e'/%3E%3Ctext x='256' y='340' font-family='system-ui,sans-serif' font-size='280' font-weight='800' fill='%23c084fc' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

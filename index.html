@@ -67,6 +67,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Git &amp; GitHub Book">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- ===== PWA Manifest ===== -->
+<link rel="manifest" href="manifest.webmanifest">
 
 <!-- ===== Local Fonts (no external requests) ===== -->
 <!-- Font @font-face declarations are in css/style.css -->
@@ -3777,5 +3781,15 @@ Footnote[^1]
 </main>
 
 <script src="js/book.js"></script>
+<script>
+  // PWA Service Worker registration
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js")
+        .then((reg) => console.log("SW registered:", reg.scope))
+        .catch((err) => console.warn("SW registration failed:", err));
+    });
+  }
+</script>
 </body>
 </html>
